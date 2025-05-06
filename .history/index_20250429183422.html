@@ -1,0 +1,2164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>ICCR</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/fav-icon.png" rel="fav-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Arizonia&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Arizonia&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
+
+
+
+  <link rel="stylesheet" type="text/css" href="assets/css/animate.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/owl.carousel.min.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/owl.theme.default.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+  <link href="assets/css/chatbot.css" rel="stylesheet">
+
+  <style>
+    .image-container {
+      position: absolute;
+      right: -100%;
+      /* Start off screen to the right */
+      transform: translateY(-50%);
+      transition: right 1s ease;
+    }
+
+    .image-container.show {
+      right: 0;
+      /* Slide to the visible area */
+    }
+
+    .hidden {
+      display: none;
+    }
+
+
+    .blog-entry {
+      width: 100%;
+      background: #fff;
+    }
+
+    .block-20 {
+      overflow: hidden;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+      height: 275px;
+      position: relative;
+      display: block;
+    }
+
+    .align-items-start {
+      -webkit-box-align: start !important;
+      -ms-flex-align: start !important;
+      align-items: flex-start !important;
+    }
+
+
+    .blog-entry .text {
+      position: relative;
+      border-top: 0;
+      border-radius: 2px;
+    }
+
+    .blog-entry .text .heading {
+      font-size: 20px;
+      margin-bottom: 16px;
+      font-weight: 600;
+    }
+
+    .blog-entry .text .heading a {
+      color: #000;
+    }
+
+    .blog-entry .meta2 a {
+      text-transform: uppercase;
+      font-size: 13px;
+      letter-spacing: 1px;
+      color: rgba(0, 0, 0, 0.4);
+    }
+
+
+    .blog-entry {
+      width: 100%;
+      background: #fff;
+    }
+
+    .blog-entry .text {
+      position: relative;
+      border-top: 0;
+      border-radius: 2px;
+    }
+
+    .blog-entry .text .heading {
+      font-size: 20px;
+      margin-bottom: 16px;
+      font-weight: 600;
+    }
+
+    .blog-entry .text .heading a {
+      color: #000;
+    }
+
+    .blog-entry .text .heading a:hover,
+    .blog-entry .text .heading a:focus,
+    .blog-entry .text .heading a:active {
+      color: #ff487e;
+    }
+
+    .blog-entry .text .meta-chat {
+      color: #b3b3b3;
+    }
+
+    .blog-entry .text .read {
+      color: #000;
+      font-size: 14px;
+    }
+
+    .blog-entry .meta-date {
+      display: inline-block;
+      background: #f0006c;
+    }
+
+    .blog-entry .meta-date span {
+      display: block;
+      color: #fff;
+    }
+
+    .blog-entry .meta-date .day {
+      font-weight: 700;
+      font-size: 20px;
+    }
+
+    .blog-entry .meta-date .mos,
+    .blog-entry .meta-date .yr {
+      font-size: 13px;
+    }
+
+    .blog-entry .meta>div {
+      display: block;
+      margin-right: 5px;
+      margin-bottom: 0px;
+      font-size: 15px;
+    }
+
+    .blog-entry .meta>div a {
+      color: #b3b3b3;
+      font-size: 13px;
+    }
+
+    .blog-entry .meta>div a:hover {
+      color: #cccccc;
+    }
+
+    .blog-entry .meta2 a {
+      text-transform: uppercase;
+      font-size: 13px;
+      letter-spacing: 1px;
+      color: rgba(0, 0, 0, 0.4);
+    }
+
+    .ml-auto,
+    .mx-auto {
+      margin-left: auto !important;
+    }
+
+    .ml-auto,
+    .mx-auto {
+      margin-left: auto !important;
+    }
+
+    .ion-ios-chatboxes:before {
+      content: "\f3fa";
+    }
+
+    section#events-posts {
+      padding-bottom: 0px;
+    }
+
+    section {
+      font-size: 16px;
+      /* default font size */
+    }
+  </style>
+
+
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
+
+
+
+</head>
+
+<body class="index-page">
+
+  <!-- Popup Container -->
+  <!-- <div class="popup-overlay" id="popup">
+    <div class="popup-content">
+      <button class="close-btn" onclick="closePopup()">Close</button>
+      <img src="assets/img/pop-up.png" alt="Popup Image">
+    </div>
+  </div> -->
+
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel"></h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" style="margin: 0 auto;">
+          <nav>
+            <ul>
+              <li>
+                ICCR Yuva Mitra Prize
+                <span></span><span></span><span></span><span></span>
+              </li>
+              <li>
+                ICCR Kala Saadhak Prize
+                <span></span><span></span><span></span><span></span>
+              </li>
+              <li>
+                ICCR ki Khoj Series
+                <span></span><span></span><span></span><span></span>
+              </li>
+              <li>
+                Padma Awardee Series
+                <span></span><span></span><span></span><span></span><span></span><span></span>
+              </li>
+            </ul>
+          </nav>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <header id="header" class="header d-flex align-items-center light-background sticky-top">
+    <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <img class="logo-light" src="assets/img/logo.svg" alt="">
+        <img class="logo-dark" style="display: none;" src="assets/img/logo-dark.svg" alt="">
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html#hero" class="active">Home</a></li>
+          <li class="dropdown"><a href="#"><span>About us</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="#">History</a></li>
+              <li><a href="#">President</a></li>
+              <li><a href="#">Director General</a></li>
+              <li><a href="#">Memorandum of Association</a></li>
+              <li><a href="#">Former Presidents</a></li>
+              <li><a href="#">Former Director Generals</a></li>
+              <li><a href="#">Member of Governing Body</a></li>
+              <li><a href="#">Registration Certificate</a></li>
+              <li><a href="#">Indian Cultural Centers Abroad</a></li>
+              <li><a href="#">Zonal and sub-zonal centers</a></li>
+              <li><a href="#">Staff Strength</a></li>
+              <li class="dropdown"><a href="#"><span>Acts &amp; Rules</span> <i
+                    class="bi bi-chevron-down toggle-dropdown"></i></a>
+                <ul>
+                  <li><a href="#">ICCR Recruitment Rules
+                    </a></li>
+                  <li><a href="#">Constitution</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Who’s Who</a></li>
+            </ul>
+          </li>
+          <li class="dropdown"><a href="#"><span>Culture</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="#">Incoming Cultural Delegations</a></li>
+              <li><a href="#">Outgoing Cultural Delegations</a></li>
+
+            </ul>
+          </li>
+          <li class="dropdown"><a href="#"><span>Artist</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="#">Introduction</a></li>
+              <li class="dropdown"><a href="#"><span>Empanelment of Artists/Groups</span> <i
+                    class="bi bi-chevron-down toggle-dropdown"></i></a>
+                <ul>
+                  <li><a href="#">Introduction
+                    </a></li>
+                  <li><a href="#">Student Category</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="dropdown"><a href="#"><span>Conferences &amp; Exhibitions</span> <i
+                class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li class="dropdown"><a href="#"><span>Conferences &amp; Seminars</span> <i
+                    class="bi bi-chevron-down toggle-dropdown"></i></a>
+                <ul>
+                  <li><a href="#">Introduction
+                    </a></li>
+                  <li><a href="#">Online Form for Conferences &amp; Seminars</a></li>
+                </ul>
+
+              </li>
+              <li class="dropdown"><a href="#"><span>Visitors Programme</span> <i
+                    class="bi bi-chevron-down toggle-dropdown"></i></a>
+                <ul>
+                  <li><a href="#">Foreign Visitors Programme
+                    </a></li>
+                  <li><a href="#">Distinguished Visitors Programme</a></li>
+                  <li><a href="#">Academic Visitors Programme</a></li>
+                  <li><a href="#">Gen-Next Democracy Network Programme</a></li>
+                  <li><a href="#">Orientation Programme for Students of Hindi</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Awards</a></li>
+              <li class="dropdown"><a href="#"><span>Annapurna Certificate</span> <i
+                    class="bi bi-chevron-down toggle-dropdown"></i></a>
+                <ul>
+                  <li><a href="#">About Annapurna Certificate
+                    </a></li>
+                  <li><a href="#">Terms &amp; Conditions</a></li>
+                  <li><a href="#">Winners</a></li>
+                  <li><a href="#">Application Form</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Pratibha Sangam Competition</a></li>
+
+            </ul>
+          </li>
+          <li class="dropdown"><a href="#"><span>Scholarships</span> <i
+                class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li class="dropdown"><a href="#"><span>ICCR Scholarships</span> <i
+                    class="bi bi-chevron-down toggle-dropdown"></i></a>
+                <ul>
+                  <li><a href="#">About
+                    </a></li>
+                  <li><a href="#">ICCR Scholarship Schemes</a></li>
+                  <li><a href="#">Guidelines</a></li>
+                  <li><a href="#">Apply Online</a></li>
+                </ul>
+
+              </li>
+              <li class="dropdown"><a href="#"><span>Fellowship Programme</span> <i
+                    class="bi bi-chevron-down toggle-dropdown"></i></a>
+                <ul>
+                  <li><a href="#">Introduction
+                    </a></li>
+                  <li><a href="#">Guidelines</a></li>
+                  <li><a href="#">Fellowship Application Form</a></li>
+
+                </ul>
+              </li>
+              <li><a href="#">Scholarship FAQs</a></li>
+
+            </ul>
+          </li>
+          <li class="dropdown"><a href="#"><span>Announcements</span> <i
+                class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li class="dropdown"><a href="#"><span>What's New</span> <i
+                    class="bi bi-chevron-down toggle-dropdown"></i></a>
+                <ul>
+                  <li><a href="#">Current Events
+                    </a></li>
+                  <li><a href="#">Circulars</a></li>
+                  <li><a href="#">Notice</a></li>
+
+                </ul>
+
+              </li>
+              <li><a href="#">Tenders</a></li>
+              <li><a href="#">RTI</a></li>
+              <li><a href="#">Vacancy</a></li>
+
+            </ul>
+          </li>
+          <li><a href="#">Unified Information</a></li>
+          <li class="dropdown"><a href="#"><span>Contact</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+
+              <li><a href="#">ICCR Organogram</a></li>
+              <li><a href="#">Contact List</a></li>
+              <li><a href="#">Locate Us</a></li>
+
+            </ul>
+          </li>
+
+        </ul>
+        <!-- <i class="mobile-nav-toggle  bi bi-list"></i> -->
+      </nav>
+      <form class="search-form ms-4">
+        <div class="input-wrapper" style="position: relative;">
+          <input type="text" placeholder="Search..." class="form-control">
+          <span style="position: absolute; top: 50%; right: 10px; transform: translateY(-50%); color: #999;"
+            onclick="window.location.href = '?q=' + encodeURIComponent(document.getElementById('searchInput').value);">
+            <i class="bi bi-search"></i>
+          </span>
+        </div>
+      </form>
+
+      <div class="header-social-links d-flex">
+        <nav id="navsettings" class="navsettings">
+          <ul>
+            <li class="nav-lang"> <a href=""></a>
+              <select class="language-selector" onchange="alert('https://location.loc?lang=' + this.value)">
+                <option value="tr">Hindi</option>
+                <option value="en" selected="">English</option>
+              </select>
+            </li>
+            <li>
+              <div class="dark-light">
+                <input type="checkbox" class="checkbox" id="checkbox">
+                <label for="checkbox" class="checkbox-label">
+                  <i class="fas fa-moon"></i>
+                  <i class="fas fa-sun"></i>
+                  <span class="ball"></span>
+                </label>
+              </div>
+            </li>
+            <li>
+              <div class="web-font-size-controls">
+                <button id="decrease">A-</button>
+                <button id="reset">A</button>
+                <button id="increase">A+</button>
+              </div>
+            </li>
+          </ul>
+          <!-- <i class="mobile-settings-toggle  bi bi-gear" id="settingsToggle"></i> -->
+        </nav>
+
+      </div>
+
+      <div class="d-flex align-items-center mobilenavicon gap-2">
+        <i class="mobile-nav-toggle  bi bi-list" id="menuToggle"></i>
+        <i class="mobile-settings-toggle  bi bi-gear" id="settingsToggle"></i>
+      </div>
+
+    </div>
+
+  </header>
+
+  <!-- <a href="https://x.com/iccr_hq" class="twitter"><i class="bi bi-twitter-x"></i></a>
+        <a href="https://www.facebook.com/ICCROfficial/" class="facebook"><i class="bi bi-facebook"></i></a>
+        <a href="https://www.instagram.com/iccr_delhi/" class="instagram"><i class="bi bi-instagram"></i></a>
+        <a href="https://www.youtube.com/@ICCRHQ" class="youtube"><i class="bi bi-youtube"></i></a> -->
+
+
+
+  <nav class="social">
+    <ul>
+      <li><img class="social-pic" src="assets/img/announcements.png" alt="" style="color: #6610f2;">
+        <a href="#" class="ah">Announcements</a>
+      </li>
+      <li><img class="social-pic" src="assets/img/conference.png" alt="" style="color: #6610f2;">
+        <a href="#" class="con">Conferences<a>
+      </li>
+      <li><img class="social-pic" src="assets/img/scholorship.png" alt="" style="color: #6610f2;">
+        <a href="#" class="sh">Scholarships</a>
+      </li>
+      <li class="ae-li"><img class="social-pic" src="assets/img/ICC-visitors-plan.png" alt="" style="color: #6610f2;">
+        <a href="#" class="vp">ICCR Visitors Programme</a>
+      </li>
+      <li class="ae-li"><img class="social-pic" src="assets/img/iccr-exchange.png" alt="" style="color: #6610f2;">
+        <a href="#" class="ae">ICCR Agreement & Exchange</a>
+      </li>
+      <li><img class="social-pic" src="assets/img/iccr-chairs-pic.png" alt="" style="color: #6610f2;">
+        <a href="#" class="ch">ICCR Chairs</a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="hero" class="hero section dark-background">
+    <main class="main">
+      <video autoplay loop muted playsinline id="hero-video" data-aos="fade-in">
+        <source src="assets/img/video/ICCR.mp4" type="video/mp4">
+      </video>
+
+      <!-- Social Buttons Container -->
+
+      <div class="social-buttons">
+        <div class="image-container show" id="slideImage">
+          <div class="carousel">
+            <img src="assets/img/event-banner.jpg" alt="White Label" class="carousel-img active" />
+            <img src="assets/img/yoga_banner2.jpg" alt="White Label" class="carousel-img" />
+            <img src="assets/img/register-banner.jpg" alt="White Label" class="carousel-img" />
+          </div>
+        </div>
+
+        <div class="social-button">
+          <span><a class="heading color" link href="#">Exhibit <br> Your Talents with <br>ICCR</a></span>
+        </div>
+        <div class="social-button1">
+          <span><a class="heading color" link href="#">Quiz <br> Participate & Win <br> ₹ 1000</a></span>
+        </div>
+        <div class="social-button2">
+          <span><a class="heading color" link href="#">Subscribe <br> With ICCR <br> Stay Update</a></span>
+        </div>
+
+      </div>
+
+    </main>
+  </section>
+
+  <!-- About General -->
+  <section id="team" class="team section light-background">
+
+    <div class="container aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
+
+      <div class="row gy-2">
+
+        <div class="col-lg-6 aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
+          <!-- Carousel -->
+          <div id="demo" class="carousel slide" data-bs-ride="carousel">
+            <!-- The slideshow/carousel -->
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="assets/img/Scholarship.jpg" alt="Scholarship" class="d-block">
+              </div>
+              <div class="carousel-item">
+                <img src="assets/img/Events.jpg" alt="Events" class="d-block">
+              </div>
+              <div class="carousel-item">
+                <img src="assets/img/Visitor-programs.jpg" alt="Visitor" class="d-block">
+              </div>
+              <div class="carousel-item">
+                <img src="assets/img/Exchange.jpg" alt="Exchange" class="d-block">
+              </div>
+              <div class="carousel-item">
+                <img src="assets/img/Chairs.jpg" alt="Chairs" class="d-block">
+              </div>
+            </div>
+
+            <!-- Left and right controls/icons -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+              <span class="carousel-control-next-icon"></span>
+            </button>
+          </div>
+
+        </div><!-- End Team Member -->
+
+        <div class="col-lg-6 aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
+          <div class="team-member d-flex">
+            <div class="member-img">
+              <img src="assets/img/Nandini-Singla.webp" class="img-fluid" alt="" loading="lazy">
+            </div>
+            <div class="member-info flex-grow-1">
+              <h4 class="gen-name" target="_blank">Mrs. K. Nandini Singla</h4>
+              <span>Director General, Indian Council for Cultural Relations</span>
+              <p>A career diplomat, Mrs. K. Nandini Singla joined the Indian Foreign Service in 1997 and has played a
+                key role in strengthening India's cultural diplomacy.</p>
+              <a href="https://iccr.gov.in/about-us/director-general" class="gen-name" target="_blank">View More</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+  <!-- /About General -->
+
+  <!-- Start Event Section -->
+  <section id="events-posts" class="events-posts ftco-section section" loading="lazy">
+
+    <div class="section-title text-center mb-50">
+      <small class="sub-title">countdown on</small>
+      <h2 class="big-title">Latest <strong>Events</strong></h2>
+    </div>
+
+    <div class="countdown-timer">
+      <ul class="countdown-list" data-countdown="2020/08/08">
+        <li class="timer-item days"><strong id="">00</strong><small>days</small></li>
+        <li class="timer-item hours"><strong id="">00</strong><small>hours</small></li>
+        <li class="timer-item mins"><strong id="">00</strong><small>mins</small></li>
+        <li class="timer-item seco"><strong id="">00</strong><small>seco</small></li>
+      </ul>
+    </div>
+
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+      <div class="row">
+
+        <div class="col-md-12">
+          <div class="featured-carousel owl-carousel">
+            <div class="item">
+              <div class="blog-entry">
+                <a href="#" class="block-20 d-flex align-items-start"
+                  style="background-image: url('assets/img/event/image_1.jpg');">
+                  <div class="meta-date text-center p-2">
+                    <span class="day">09</span>
+                    <span class="mos">April.</span>
+                    <span class="yr">2025</span>
+                  </div>
+                </a>
+                <div class="text border border-top-0 p-4">
+                  <h3 class="heading"><a href="#">Registration for the ICCR Yuva Mitra Prize</a></h3>
+                  <p>
+                    ICCR Yuva Mitra Prize
+                    The Indian Council for Cultural Relations (ICCR) is proud to introduce the ICCR Yuva Mitra Prize,
+                    recognizing,..</p>
+                  <div class="d-flex align-items-center mt-4">
+                    <p class="mb-0"><a href="#" class="btn btn-primary">Read More <span
+                          class="ion-ios-arrow-round-forward"></span></a></p>
+                    <p class="ml-auto meta2 mb-0">
+                      <a href="#" class="mr-2">Yuva Mitra Prize</a>
+                      <a href="#" class="meta-chat"><span class="ion-ios-chatboxes"></span> 3</a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="item">
+              <div class="blog-entry">
+                <a href="#" class="block-20 d-flex align-items-start"
+                  style="background-image: url('assets/img/event/image_2.jpg');">
+                  <div class="meta-date text-center p-2">
+                    <span class="day">15</span>
+                    <span class="mos">April.</span>
+                    <span class="yr">2025</span>
+                  </div>
+                </a>
+                <div class="text border border-top-0 p-4">
+                  <h3 class="heading"><a href="#">Admission under AYUSH Scholarship Scheme</a></h3>
+                  <p>ICCR Yuva Mitra Prize
+                    The Indian Council for Cultural Relations (ICCR) is proud to introduce the ICCR Yuva Mitra Prize,
+                    recognizing,..</p>
+                  <div class="d-flex align-items-center mt-4">
+                    <p class="mb-0"><a href="#" class="btn btn-primary">Read More <span
+                          class="ion-ios-arrow-round-forward"></span></a></p>
+                    <p class="ml-auto meta2 mb-0">
+                      <a href="#" class="mr-2">AYUSH Scholarship</a>
+                      <a href="#" class="meta-chat"><span class="ion-ios-chatboxes"></span> 3</a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="item">
+              <div class="blog-entry">
+                <a href="#" class="block-20 d-flex align-items-start"
+                  style="background-image: url('assets/img/event/image_3.jpg');">
+                  <div class="meta-date text-center p-2">
+                    <span class="day">20</span>
+                    <span class="mos">Feb.</span>
+                    <span class="yr">2025</span>
+                  </div>
+                </a>
+                <div class="text border border-top-0 p-4">
+                  <h3 class="heading"><a href="#">Students registration opens on 20th February 2025</a></h3>
+                  <p>ICCR Yuva Mitra Prize
+                    The Indian Council for Cultural Relations (ICCR) is proud to introduce the ICCR Yuva Mitra Prize,
+                    recognizing,..</p>
+                  <div class="d-flex align-items-center mt-4">
+                    <p class="mb-0"><a href="#" class="btn btn-primary">Read More <span
+                          class="ion-ios-arrow-round-forward"></span></a></p>
+                    <p class="ml-auto meta2 mb-0">
+                      <a href="#" class="mr-2">Registration</a>
+                      <a href="#" class="meta-chat"><span class="ion-ios-chatboxes"></span> 3</a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="item">
+              <div class="blog-entry">
+                <a href="#" class="block-20 d-flex align-items-start"
+                  style="background-image: url('assets/img/event/image_4.jpg');">
+                  <div class="meta-date text-center p-2">
+                    <span class="day">13</span>
+                    <span class="mos">Mar.</span>
+                    <span class="yr">2025</span>
+                  </div>
+                </a>
+                <div class="text border border-top-0 p-4">
+                  <h3 class="heading"><a href="#">
+                      Advertisement for Internship in ICCR</a></h3>
+                  <p>ICCR Yuva Mitra Prize
+                    The Indian Council for Cultural Relations (ICCR) is proud to introduce the ICCR Yuva Mitra Prize,
+                    recognizing,..</p>
+                  <div class="d-flex align-items-center mt-4">
+                    <p class="mb-0"><a href="#" class="btn btn-primary">Read More <span
+                          class="ion-ios-arrow-round-forward"></span></a></p>
+                    <p class="ml-auto meta2 mb-0">
+                      <a href="#" class="mr-2">Internship</a>
+                      <a href="#" class="meta-chat"><span class="ion-ios-chatboxes"></span> 3</a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="item">
+              <div class="blog-entry">
+                <a href="#" class="block-20 d-flex align-items-start"
+                  style="background-image: url('assets/img/event/image_5.jpg');">
+                  <div class="meta-date text-center p-2">
+                    <span class="day">09</span>
+                    <span class="mos">Apr.</span>
+                    <span class="yr">2025</span>
+                  </div>
+                </a>
+                <div class="text border border-top-0 p-4">
+                  <h3 class="heading"><a href="#">Registration for the ICCR Kala Saadhak Prize</a></h3>
+                  <p>ICCR Yuva Mitra Prize
+                    The Indian Council for Cultural Relations (ICCR) is proud to introduce the ICCR Yuva Mitra Prize,
+                    recognizing,..</p>
+                  <div class="d-flex align-items-center mt-4">
+                    <p class="mb-0"><a href="#" class="btn btn-primary">Read More <span
+                          class="ion-ios-arrow-round-forward"></span></a></p>
+                    <p class="ml-auto meta2 mb-0">
+                      <a href="#" class="mr-2">Kala Saadhak Prize</a>
+                      <a href="#" class="meta-chat"><span class="ion-ios-chatboxes"></span> 3</a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="item">
+              <div class="blog-entry">
+                <a href="#" class="block-20 d-flex align-items-start"
+                  style="background-image: url('assets/img/event/image_6.jpg');">
+                  <div class="meta-date text-center p-2">
+                    <span class="day">26</span>
+                    <span class="mos">Nov.</span>
+                    <span class="yr">2025</span>
+                  </div>
+                </a>
+                <div class="text border border-top-0 p-4">
+                  <h3 class="heading"><a href="#">Registration for the ICCR ki khoj Series</a></h3>
+                  <p>ICCR Yuva Mitra Prize
+                    The Indian Council for Cultural Relations (ICCR) is proud to introduce the ICCR Yuva Mitra Prize,
+                    recognizing,..</p>
+                  <div class="d-flex align-items-center mt-4">
+                    <p class="mb-0"><a href="#" class="btn btn-primary">Read More <span
+                          class="ion-ios-arrow-round-forward"></span></a></p>
+                    <p class="ml-auto meta2 mb-0">
+                      <a href="#" class="mr-2">Admin</a>
+                      <a href="#" class="meta-chat"><span class="ion-ios-chatboxes"></span> 3</a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+  </section>
+  <!-- End Event Section  -->
+
+  <!-- Conference Section -->
+  <div class="container-fluid" loading="lazy">
+    <div class="section-title text-center mb-50">
+      <small class="sub-title">Check Our General Activities</small>
+      <h2 class="big-title">Latest <strong>ICCR Activities</strong></h2>
+    </div>
+    <div class="conference-content">
+      <div class="row">
+        <div class="col-md-4 video">
+          <div class="conference-content-box conf">
+            <div class="circle__crop">
+              <div class="circle__container">
+                <div class="circle"></div>
+                <div class="circle"></div>
+              </div>
+            </div>
+            <div class="video-clip">
+              <video
+                data-od-xpath="/HTML/BODY/SECTION[@id='happenings']/*[1][self::DIV]/*[2][self::DIV]/*[1][self::DIV]/*[2][self::DIV]/*[1][self::VIDEO]"
+                class="conference-video" autoplay="" loop="" muted="" playsinline="">
+                <source src="assets/img/video/speak.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="conference-content-video-content">
+              <h3>Conference & Seminar
+              </h3>
+              <p>The main objective of the India Council for Cultural Relations is formulation and implementation of
+                policies and programs related to India’s external cultural relations;
+
+              </p>
+              <p>&nbsp;</p>
+              <p> foster & strengthen cultural relations and mutual understanding between India and other
+                countries.promote cultural exchanges; establish and develop relations,..</p>
+            </div>
+            <p class="text-end"><a href="#" data-bs-toggle="modal" data-bs-target="#hubspotModal"
+                data-modal-title="SPEAK" data-form-id="8a71a2dc-cb58-4a81-af22-7797d086c708">SPEAK <i
+                  class="fa-solid fa-arrow-right-long"></i></a>
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4 video">
+          <div class="conference-content-box exhib">
+            <div class="circle__crop">
+              <div class="circle__container">
+                <div class="circle"></div>
+                <div class="circle"></div>
+              </div>
+            </div>
+            <div class="video-clip">
+              <video
+                data-od-xpath="/HTML/BODY/SECTION[@id='happenings']/*[1][self::DIV]/*[2][self::DIV]/*[2][self::DIV]/*[2][self::DIV]/*[1][self::VIDEO]"
+                class="conference-video" autoplay="" loop="" muted="" playsinline="">
+                <source src="assets/img/video/Dance.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="conference-content-video-content">
+              <h3>Cultural</h3>
+              <p>ICCR is dedicated to sharing India’s rich artistic heritage with the world by sponsoring talented
+                performing artists. To facilitate this, the Council empanels Indian artists across various disciplines,
+                including classical and folk dance, Hindustani and Carnatic vocal, instrumental music,...</p>
+              <p>&nbsp;</p>
+              <p>Artists aged 18 and above are eligible to apply,..</p>
+            </div>
+            <p class="text-end"><a href="#" data-bs-toggle="modal" data-bs-target="#hubspotModal"
+                data-modal-title="EXHIBIT" data-form-id="b821758d-d2ce-466a-870b-fec708144f31">CULTURAL ACTIVITIES <i
+                  class="fa-solid fa-arrow-right-long"></i></a>
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4 video">
+          <div class="conference-content-box after">
+            <div class="circle__crop">
+              <div class="circle__container">
+                <div class="circle"></div>
+                <div class="circle"></div>
+              </div>
+            </div>
+            <div class="video-clip">
+              <video
+                data-od-xpath="/HTML/BODY/SECTION[@id='happenings']/*[1][self::DIV]/*[2][self::DIV]/*[3][self::DIV]/*[2][self::DIV]/*[1][self::VIDEO]"
+                class="conference-video" autoplay="" loop="" muted="" playsinline="">
+                <source src="assets/img/video/Event.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="conference-content-video-content">
+              <h3>Events</h3>
+              <p>10th edition of India-International Dance and Music Festival concludes</p>
+              <p>&nbsp;</p>
+              <p>New Delhi, Feb 27 (PTI) The 10th edition of the India-International Dance and Music Festival, organised
+                by the Indian Council for Cultural Relations (ICCR) in collaboration with the Delhi Development
+                Authority (DDA),.</p>
+            </div>
+            <p class="text-end"><a href="#" data-bs-toggle="modal" data-bs-target="#hubspotModal"
+                data-modal-title="BECOME A SPONSOR" data-form-id="d31207d5-9ce3-4ac3-8d98-d24c3483f10e">EXHIBITIONS <i
+                  class="fa-solid fa-arrow-right-long"></i></a></p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <!-- /Conference Section -->
+
+  <!-- Featured Posts Section -->
+  <section id="featured-posts" class="featured-posts section" loading="lazy">
+
+    <!-- Section Title -->
+    <div class="section-title text-center mb-50">
+      <small class="sub-title">Check Our Featured Posts</small>
+      <h2 class="big-title">Latest <strong>Featured Posts</strong></h2>
+    </div><!-- End Section Title -->
+
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+      <div class="blog-posts-slider swiper init-swiper">
+        <script type="application/json" class="swiper-config">
+          {
+            "loop": true,
+            "speed": 800,
+            "autoplay": {
+              "delay": 5000
+            },
+            "slidesPerView": 3,
+            "spaceBetween": 30,
+            "breakpoints": {
+              "320": {
+                "slidesPerView": 1,
+                "spaceBetween": 20
+              },
+              "768": {
+                "slidesPerView": 2,
+                "spaceBetween": 20
+              },
+              "1200": {
+                "slidesPerView": 3,
+                "spaceBetween": 30
+              }
+            }
+          }
+        </script>
+
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="blog-post-item">
+              <img src="assets/img/blog/blog-post-portrait-1.webp" alt="Blog Image">
+              <div class="blog-post-content">
+                <div class="post-meta">
+                  <span><i class="bi bi-person"></i> ICCR</span>
+                  <span><i class="bi bi-clock"></i> Mar 10, 2024</span>
+                  <span><i class="bi bi-chat-dots"></i> 6 Comments</span>
+                </div>
+                <h2><a href="#">Visit of a 2-member delegation from Alikhan Bokeikhan University</a></h2>
+                <p>Visit of a 2-member delegation from Alikhan Bokeikhan University (ABU), Kazakhstan, under ICCR’s
+                  Academic Visitors Programme (AVP) from March 10-18, 2024</p>
+                <a href="#" class="read-more">Read More <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div><!-- End slide item -->
+
+          <div class="swiper-slide">
+            <div class="blog-post-item">
+              <img src="assets/img/blog/blog-post-portrait-2.webp" alt="Blog Image">
+              <div class="blog-post-content">
+                <div class="post-meta">
+                  <span><i class="bi bi-person"></i> ICCR</span>
+                  <span><i class="bi bi-clock"></i> Nov 22, 2024</span>
+                  <span><i class="bi bi-chat-dots"></i> 6 Comments</span>
+                </div>
+                <h2><a href="#">ICCR extends a warm welcome to our new Director General, Amb. K. Nandini Singla!</a>
+                </h2>
+                <p>Here’s to a journey enriched with cultural exchange, global collaboration, and the strengthening of
+                  India’s soft power through diplomacy. Welcome aboard, ma'am!</p>
+                <a href="#" class="read-more">Read More <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div><!-- End slide item -->
+
+          <div class="swiper-slide">
+            <div class="blog-post-item">
+              <img src="assets/img/blog/blog-post-portrait-3.webp" alt="Blog Image">
+              <div class="blog-post-content">
+                <div class="post-meta">
+                  <span><i class="bi bi-person"></i> ICCR</span>
+                  <span><i class="bi bi-clock"></i> Feb 17, 2025</span>
+                  <span><i class="bi bi-chat-dots"></i> 15 Comments</span>
+                </div>
+                <h2><a href="#">Prime Minister's Yoga Awards 2025</a></h2>
+                <p>Yoga is an invaluable gift of ancient Indian tradition. The word "Yoga" is derived from the Sanskrit
+                  root yuj meaning "to join", "to yoke" or "to unite", symbolizing the unity of mind and body; thought
+                  and action; </p>
+                <a href="#" class="read-more">Read More <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div><!-- End slide item -->
+
+          <div class="swiper-slide">
+            <div class="blog-post-item">
+              <img src="assets/img/blog/blog-post-portrait-4.webp" alt="Blog Image">
+              <div class="blog-post-content">
+                <div class="post-meta">
+                  <span><i class="bi bi-person"></i> ICCR</span>
+                  <span><i class="bi bi-clock"></i> Jul 01, 2024</span>
+                  <span><i class="bi bi-chat-dots"></i> 10 Comments</span>
+                </div>
+                <h2><a href="#">Pratibha Sangam Competition 2024</a></h2>
+                <p>The Indian Council for Cultural Relations (ICCR) - the cultural arm of the Ministry of External
+                  Affairs, Government of India , has been actively pursuing promotion of Indian culture abroad through
+                  its Indian Cultural Centers functioning abroad and the Indian diaspora.</p>
+                <a href="#" class="read-more">Read More <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div><!-- End slide item -->
+
+          <div class="swiper-slide">
+            <div class="blog-post-item">
+              <img src="assets/img/blog/blog-post-portrait-5.webp" alt="Blog Image">
+              <div class="blog-post-content">
+                <div class="post-meta">
+                  <span><i class="bi bi-person"></i> ICCR</span>
+                  <span><i class="bi bi-clock"></i> Jan 27, 2025</span>
+                  <span><i class="bi bi-chat-dots"></i> 6 Comments</span>
+                </div>
+                <h2><a href="#">Important to ensure world understands India correctly: ICCR president Vinay
+                    Sahasrabuddhe</a></h2>
+                <p>New Delhi: Do children of African countries study about Mahatma Gandhi in depth and do schools in
+                  Europe educate their students about the river Ganga as those here talk about the river Nile? Do
+                  children of the world read about Indian kings and revolutionaries, and about our history and struggles
+                </p>
+                <a href="#" class="read-more">Read More <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div><!-- End slide item -->
+        </div>
+
+      </div>
+
+    </div>
+
+  </section><!-- /Featured Posts Section -->
+
+
+  <!-- Digital gallaery Section -->
+  <section id="digital-gallaery" class="digital gallaery Section" loading="lazy">
+
+    <div class="section-title text-center mb-50">
+      <small class="sub-title">Digital Gallery:</small>
+      <h2 class="big-title">Celebrating Creativity <strong>Across Ages</strong></h2>
+    </div>
+    <div class="dig-gallery">
+      <div class="row">
+        <div class="column">
+          <div class="content-dig-gal">
+            <img class="dig-pic" src="assets/img/kids.png" alt="kids" style="width:100%">
+            <h3 class="gig-heading">Kids</h3>
+            <p class="dig-side-content">Under 12 years</p>
+          </div>
+        </div>
+        <div class="column">
+          <div class="content-dig-gal">
+            <img class="dig-pic" src="assets/img/teen.png" alt="teen" style="width:100%">
+            <h3 class="gig-heading">Teen</h3>
+            <p class="dig-side-content">13-17 years</p>
+          </div>
+        </div>
+        <div class="column">
+          <div class="content-dig-gal">
+            <img class="dig-pic" src="assets/img/youth.png" alt="youth" style="width:100%">
+            <h3 class="gig-heading">Youth </h3>
+            <p class="dig-side-content">18-35 years</p>
+          </div>
+        </div>
+        <div class="column">
+          <div class="content-dig-gal">
+            <img class="dig-pic" src="assets/img/woman.png" alt="woman" style="width:100%">
+            <h3 class="gig-heading">woman</h3>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </section>
+  <!-- /Digital gallaery Section -->
+
+  <!-- gallaery & video tabs -->
+  <section id="about" class="about section">
+
+    <div class="container">
+
+      <div class="row">
+        <div class="col-lg-6 aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
+
+          <!-- Carousel -->
+          <h2 class="gal-heading">Photo Gallery</h2>
+          <div id="demo" class="carousel slide" data-bs-ride="carousel">
+            <!-- The slideshow/carousel -->
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="assets/img/gel-1.jpg" alt="Los Angeles" class="gallery-block">
+              </div>
+              <div class="carousel-item">
+                <img src="assets/img/gel-2.jpg" alt="Chicago" class="gallery-block">
+              </div>
+              <div class="carousel-item">
+                <img src="assets/img/gel-3.jpg" alt="New York" class="gallery-block">
+              </div>
+            </div>
+
+            <!-- Left and right controls/icons -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+              <span class="carousel-control-next-icon"></span>
+            </button>
+          </div>
+
+        </div>
+        <div class="col-lg-6 aos-init aos-animate" data-aos="fade-up" data-aos-delay="250">
+          <h2 class="gal-heading">Video Gallery</h2>
+          <div class="content ps-0 ps-lg-5">
+            <div class="position-relative mt-4">
+              <img src="assets/img/about-2.jpg" class="img-fluid rounded-4" alt="">
+              <a href="https://www.https://www.youtube.com/watch?v=EhkPPiyVLrc&t=706s&ab_channel=ICCR"
+                class="glightbox pulsating-play-btn"></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+  <!-- /gallaery & video tabs -->
+
+
+  <!-- ======= Venue Section ======= -->
+  <section id="UTIKS" class="UTIKS venuesection container section" loading="lazy">
+
+
+
+    <main1 style="display: block;">
+
+
+      <div class="row">
+        <div class="col-md-12 col-xl-4">
+          <div>
+            <span>You know</span>
+            <h1>What is UTIKS
+            </h1>
+            <hr>
+            <p>Universalisation of Traditional Indian Knowledge Systems
+              (UTIKS) is an e-learning platform that will serve as a bridge
+              between Indian culture and the global population.</p>
+            <a href="#">Guidelines</a>
+          </div>
+        </div>
+        <div class="col-md-12 col-xl-8" id="utiks-pic">
+          <div class="swiper-newdesign">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide swiper-slide--one">
+                <div>
+                  <h2>Cuisines of India
+                  </h2>
+                  <p>Indian cuisine dates back to many thousand years. While Ved mentions various foods, their usage,
+                    and
+                    their importance, Bhagavad Gita describes certain dietary practices. These are just a few of many
+                    such
+                    examples. India was also the one to introduce vegetarianism to the world!
+                  </p>
+                  <a href="#" target="_blank">explore</a>
+                </div>
+              </div>
+              <div class="swiper-slide swiper-slide--two">
+                <div>
+                  <h2>Architecture of India</h2>
+                  <p>
+                    India is home to a myriad of structures that tell the stories of their era. The concept and nature
+                    of
+                    these architectural examples vary from region to region. It is essential to understand the function,
+                    connotation, and symbolism of these architectural remains.
+                  </p>
+                  <a href="#" target="_blank">explore</a>
+                </div>
+              </div>
+
+              <div class="swiper-slide swiper-slide--three">
+
+                <div>
+                  <h2>Attires of India</h2>
+                  <p>
+                    Indian attire has its charm and elegance, with which the western world has always been fascinated.
+                    Western fashion has been inspired by many traditional Indian attires such as Saree, Salwar Suits,
+                    Turbans, Dhotis, etc. Today's fashion world has blended Indian traditional wear, with the western
+                    attire
+                    to get the Indo-western, high-end fashion couture, to suit the needs and styles of a global
+                    audience.
+                  </p>
+                  <a href="#" target="_blank">explore</a>
+                </div>
+              </div>
+
+              <div class="swiper-slide swiper-slide--four">
+
+                <div>
+                  <h2>Ramayan and Mahabharat
+                  </h2>
+                  <p>
+                    Ramayan and Mahabharat are the most popular epics of India. Ramayana, one of the oldest epics of the
+                    world, is ascribed to Maharshi Valmiki. The word Ramayana has two parts- Rama (Lord Rama who is the
+                    central figure) and Ayana which means travel.
+                  </p>
+                  <a href="#" target="_blank">explore</a>
+                </div>
+              </div>
+
+              <div class="swiper-slide swiper-slide--five">
+
+                <div>
+                  <h2>Indian Cinema
+                  </h2>
+                  <p>
+                    The year 2013 was a landmark year for the Indian Film Industry. In that year, Indian Cinema
+                    completed
+                    one hundred years. Over this period, India became the highest film-producing country in the world.
+                    Today, Indian films have shown a rich variety of languages and ethnicity.
+                  </p>
+                  <a href="#" target="_blank">explore</a>
+                </div>
+              </div>
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- <img src="https://cdn.pixabay.com/photo/2021/11/04/19/39/jellyfish-6769173_960_720.png" alt="" class="bg">
+      <img src="https://cdn.pixabay.com/photo/2012/04/13/13/57/scallop-32506_960_720.png" alt="" class="bg2"> -->
+    </main1>
+  </section>
+
+  <!-- Kala saadhak and Padma Awardee tabs -->
+  <section class="award-">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 award-pic">
+          <img src="assets/img/iccr-ki-khoj.gif" class="kala-saadhak-pic" alt="">
+        </div>
+        <div class="col-lg-6 award-pic">
+          <img src="assets/img/Padma-Awardee.gif" class="Padma-Awardee-pic" alt="">
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+  <!-- /Kala saadhak and Padma Awardee tabs -->
+
+  <!-- Maps and Tabs -->
+  <section class="container my-5" loading="lazy">
+    <div class="row">
+      <!-- Left Column: Real Map -->
+      <div class="col-md-6">
+
+        <div class="carousel">
+          <!-- <div class="tabs" style="display: none;">
+            <button id="btn-india" class="tab-button" onclick="switchTab('india')">India Locations</button>
+            <button id="btn-world" class="tab-button" onclick="switchTab('world')">World Locations</button>
+          </div>
+          <div id="map"></div> -->
+          <img id="imag1" src="assets/img/map-new2.jpg" alt="Zonal and Sub-zonal Centers"
+            style="width:100%; height: 450px; border-radius: 10px;">
+          <img id="imag2" src="assets/img/zonal2.jpg" alt="Zonal and Sub-zonal Centers"
+            style="width:100%; height: 450px; border-radius: 10px;">
+
+        </div>
+
+
+        <!-- <div id="map" style="height: 400px; background: #ccc;">Map Placeholder</div> -->
+      </div>
+
+      <!-- Right Column: Social Media Tabs -->
+      <div class="col-md-6">
+        <div class="container" data-aos="fade-up">
+
+          <ul class="nav nav-tabs border-0 d-flex justify-content-between flex-wrap mb-3" id="socialTab" role="tablist">
+            <!-- Facebook -->
+            <li class="nav-item flex-fill m-1" role="presentation">
+              <button
+                class="nav-link active w-100 text-white rounded bg-primary h-100 d-flex flex-column justify-content-center text-center"
+                style="min-height: 80px;" id="facebook-tab" data-bs-toggle="tab" data-bs-target="#facebook"
+                type="button" role="tab">
+                <i class="bi bi-facebook fs-4"></i>
+                <span>Facebook</span>
+              </button>
+            </li>
+            <!-- YouTube -->
+            <li class="nav-item flex-fill m-1" role="presentation">
+              <button
+                class="nav-link w-100 text-white rounded h-100 d-flex flex-column justify-content-center text-center"
+                style="background-color: #FF0000; min-height: 80px;" id="youtube-tab" data-bs-toggle="tab"
+                data-bs-target="#youtube" type="button" role="tab">
+                <i class="bi bi-youtube fs-4"></i>
+                <span>YouTube</span>
+              </button>
+            </li>
+            <!-- Instagram -->
+            <li class="nav-item flex-fill m-1" role="presentation">
+              <button
+                class="nav-link w-100 text-white rounded h-100 d-flex flex-column justify-content-center text-center"
+                style="background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285AEB 90%); min-height: 80px;"
+                id="instagram-tab" data-bs-toggle="tab" data-bs-target="#instagram" type="button" role="tab">
+                <i class="bi bi-instagram fs-4"></i>
+                <span>Instagram</span>
+              </button>
+            </li>
+            <!-- X -->
+            <li class="nav-item flex-fill m-1" role="presentation">
+              <button
+                class="nav-link w-100 text-white rounded h-100 d-flex flex-column justify-content-center text-center"
+                style="background-color: #000; min-height: 80px;" id="twitter" data-bs-toggle="tab"
+                data-bs-target="#twitter-tab" type="button" role="tab">
+                <i class="bi bi-twitter-x fs-4"></i>
+                <span>X</span>
+              </button>
+            </li>
+          </ul>
+
+          <div class="tab-content border p-4 rounded bg-light" id="socialTabContent">
+            <div class="tab-pane fade show active" id="facebook" role="tabpanel">
+              <div id="fb-root"></div>
+              <script async defer crossorigin="anonymous"
+                src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v22.0"></script>
+              <div class="fb-page" data-href="https://www.facebook.com/ICCROfficial" data-tabs="timeline"
+                data-width="500" data-height="300" data-small-header="false" data-adapt-container-width="true"
+                data-hide-cover="false" data-show-facepile="true">
+                <blockquote cite="https://www.facebook.com/ICCROfficial" class="fb-xfbml-parse-ignore"><a
+                    href="https://www.facebook.com/ICCROfficial">Indian Council For Cultural Relations</a></blockquote>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="youtube" role="tabpanel">
+            <iframe width="560" height="300" src="https://www.youtube.com/embed/EhkPPiyVLrc?si=skv9GPwYX_t2e5kv"
+              title="YouTube video player" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          <div class="tab-pane fade" id="instagram" role="tabpanel">
+
+            <div class="iframely-embed">
+                <div class="iframely-responsive" style="height: 300px; padding-bottom: 0;"><a
+                    href="https://www.instagram.com/iccr_delhi/" data-iframely-url="//iframely.net/OgefPzp"></a></div>
+              </div>
+              <script async src="https://iframely.net/embed.js"></script>
+          </div>
+
+          <div class="tab-pane fade" id="twitter-tab" role="tabpanel" style="height: 300px; overflow: scroll;">
+            <div>
+              <img src="assets/img/x.jpg" alt="">
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="testimonials section">
+
+    <!-- Section Title -->
+    <div class="container section-title" data-aos="fade-up">
+      <h2>Testimonials</h2>
+      <p class="test-content">ICCR has provided me with a life-changing platform to showcase my culture and connect with
+        global audiences.</p>
+    </div><!-- End Section Title -->
+
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+      <div class="swiper init-swiper">
+        <script type="application/json" class="swiper-config">
+            {
+              "loop": true,
+              "speed": 600,
+              "autoplay": {
+                "delay": 5000
+              },
+             
+              "slidesPerView": 3,
+              "pagination": {
+                "el": ".swiper-pagination",
+                "type": "bullets",
+                "clickable": true
+              }
+            }
+          </script>
+        <div class="swiper-wrapper">
+
+          <div class="swiper-slide">
+            <div class="testimonial-item">
+              <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
+              <h3>Madhup Mudgal</h3>
+              <h4>Principal, &amp; Gandharva Mahavidyalaya New Delhi</h4>
+              <div class="stars">
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                  class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+              </div>
+              <p>
+                <i class="bi bi-quote quote-icon-left"></i>
+                <span>“The collaborative initiative by ICCR and SPPU to create the web portal UTIKS is unique and
+                  attractive. It will appeal to students and aspiring artistes alike that authentic, accessible
+                  information on anything Indian, from folk art to food to classical dance is available on this portal.
+                  Providing genuine vetted information in engaging capsules about traditional knowledge systems like
+                  yoga, or the abundant natural wealth as well as the cultural heritage of India in a fun and user
+                  friendly way makes this website one of a kind. The fact that it is free of cost, with certified
+                  modules makes it attractive for people around the globe.”</span>
+                <i class="bi bi-quote quote-icon-right"></i>
+              </p>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="testimonial-item">
+              <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
+              <h3>Adwaita Gadanayak, DG,</h3>
+              <h4>National Gallery of Modern Art</h4>
+              <div class="stars">
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                  class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+              </div>
+              <p>
+                <i class="bi bi-quote quote-icon-left"></i>
+                <span>"I am delighted that the Indian Council for Cultural Relations is organizing online educational
+                  programs that present comprehensive information about art and culture of India. This creatively put
+                  together certificate program offers grass-root level information about India’s classical, traditional
+                  and modern art forms and art practices. It is a window to experience the rich heritage of India on a
+                  dynamic platform."</span>
+                <i class="bi bi-quote quote-icon-right"></i>
+              </p>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="testimonial-item">
+              <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
+              <h3>Sanjoy K Roy,</h3>
+              <h4>Managing Director, Teamworks.</h4>
+              <div class="stars">
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                  class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+              </div>
+              <p>
+                <i class="bi bi-quote quote-icon-left"></i>
+                <span>"Delighted to read about ICCR’s objectives to universalize the traditional Indian knowledge
+                  system. It is imperative to provide information and knowledge about Indian art, culture, our epics,
+                  literature, wildlife, architecture, folk art, yoga, cuisine and traditional dances, among others. This
+                  is a vital contribution in creating a knowledge platform which allows for democratic access of
+                  information."</span>
+                <i class="bi bi-quote quote-icon-right"></i>
+              </p>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="testimonial-item">
+              <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
+              <h3>Madhup Mudgal</h3>
+              <h4>Principal, &amp; Gandharva Mahavidyalaya New Delhi</h4>
+              <div class="stars">
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                  class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+              </div>
+              <p>
+                <i class="bi bi-quote quote-icon-left"></i>
+                <span>“The collaborative initiative by ICCR and SPPU to create the web portal UTIKS is unique and
+                  attractive. It will appeal to students and aspiring artistes alike that authentic, accessible
+                  information on anything Indian, from folk art to food to classical dance is available on this portal.
+                  Providing genuine vetted information in engaging capsules about traditional knowledge systems like
+                  yoga, or the abundant natural wealth as well as the cultural heritage of India in a fun and user
+                  friendly way makes this website one of a kind. The fact that it is free of cost, with certified
+                  modules makes it attractive for people around the globe.”</span>
+                <i class="bi bi-quote quote-icon-right"></i>
+              </p>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="testimonial-item">
+              <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
+              <h3>Adwaita Gadanayak, DG,</h3>
+              <h4>National Gallery of Modern Art</h4>
+              <div class="stars">
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                  class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+              </div>
+              <p>
+                <i class="bi bi-quote quote-icon-left"></i>
+                <span>"I am delighted that the Indian Council for Cultural Relations is organizing online educational
+                  programs that present comprehensive information about art and culture of India. This creatively put
+                  together certificate program offers grass-root level information about India’s classical, traditional
+                  and modern art forms and art practices. It is a window to experience the rich heritage of India on a
+                  dynamic platform."</span>
+                <i class="bi bi-quote quote-icon-right"></i>
+              </p>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="testimonial-item">
+              <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
+              <h3>Sanjoy K Roy,</h3>
+              <h4>Managing Director, Teamworks.</h4>
+              <div class="stars">
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                  class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+              </div>
+              <p>
+                <i class="bi bi-quote quote-icon-left"></i>
+                <span>"Delighted to read about ICCR’s objectives to universalize the traditional Indian knowledge
+                  system. It is imperative to provide information and knowledge about Indian art, culture, our epics,
+                  literature, wildlife, architecture, folk art, yoga, cuisine and traditional dances, among others. This
+                  is a vital contribution in creating a knowledge platform which allows for democratic access of
+                  information."</span>
+                <i class="bi bi-quote quote-icon-right"></i>
+              </p>
+            </div>
+          </div>
+
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+
+    </div>
+
+  </section>
+  <!-- End testimonial item -->
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact section" loading="lazy">
+
+    <!-- Section Title -->
+    <div class="section-title text-center mb-50">
+      <!-- <small class="sub-title">Contact</small> -->
+      <h2 class="big-title"> <strong>Contact US</strong></h2>
+    </div><!-- End Section Title -->
+
+
+  </section><!-- /Contact Section -->
+
+  <!-- Chatbot -->
+  <div class="botIcon" loading="lazy">
+    <div class="botIconContainer">
+      <div class="iconInner">
+        <i class="fa fa-comment" aria-hidden="true"></i>
+      </div>
+    </div>
+
+    <div class="Layout Layout-open Layout-expand Layout-right chatbot-theme-default" id="chatbotTheme">
+      <div class="Messenger_messenger">
+        <div class="Messenger_header">
+          <h4 class="Messenger_prompt" style="color: #fff;">Indian Council for Cultural Relations</h4>
+          <span class="chat_close_icon"><i class="fa fa-window-close" aria-hidden="true"></i></span>
+        </div>
+        <div class="Messenger_content">
+          <div class="Messages">
+            <div class="Messages_list"></div>
+          </div>
+          <form id="messenger">
+            <div class="Input Input-blank">
+              <input name="msg" class="Input_field" placeholder="Send a message...">
+              <button type="submit" class="Input_button Input_button-send">
+                <div class="Icon">
+                  <svg viewBox="1496 193 57 54" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                    <g transform="translate(1499, 193)">
+                      <path
+                        d="M5.4,44.5 L16.6,44.5 L21.0,20.4 C21.7,17.1 26.3,17.1 26.9,20.4 L31.6,44.5 L42.5,44.5 L24.0,7.1 L5.4,44.5 Z M22.0,48.1 C21.8,49.5 20.5,50.5 19.1,50.5 L1.6,50.5 C-1.2,50.5 -2.9,47.8 -1.6,45.3 L20.8,-0.1 C22.2,-2.8 25.8,-2.8 27.1,-0.1 L49.6,45.3 C50.1,47.8 49.1,50.5 46.4,50.5 L29.2,50.5 C27.7,50.5 26.5,49.5 26.2,48.1 L24.1,37.1 L22.0,48.1 Z"
+                        fill="#96AAB4"></path>
+                    </g>
+                  </svg>
+                </div>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Chatbot -->
+
+  <!-- Quiz Modal -->
+  <div class="modal fade" id="quizModal" tabindex="-1" aria-labelledby="quizModalLabel" aria-hidden="true"
+    loading="lazy">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <h5 class="modal-title" id="quizModalLabel">ICCR Quiz Registration</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <form id="quizForm">
+          <div class="modal-body">
+
+            <div class="mb-3">
+              <label for="quizName" class="form-label">Name</label>
+              <input type="text" class="form-control" id="quizName" name="name" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="quizEmail" class="form-label">Email</label>
+              <input type="email" class="form-control" id="quizEmail" name="email" required>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Sex</label><br>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="sex" id="sexMale" value="Male" required>
+                <label class="form-check-label" for="sexMale">Male</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="sex" id="sexFemale" value="Female">
+                <label class="form-check-label" for="sexFemale">Female</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="sex" id="sexOther" value="Other">
+                <label class="form-check-label" for="sexOther">Other</label>
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="quizMobile" class="form-label">Mobile</label>
+              <input type="tel" class="form-control" id="quizMobile" name="mobile" pattern="[0-9]{10}" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="quizCategory" class="form-label">Category</label>
+              <select class="form-select" id="quizCategory" name="category" required>
+                <option value="" selected disabled>Select category</option>
+                <option value="Student">Student</option>
+                <option value="General Public">General Public</option>
+                <option value="Performer">Performer</option>
+                <option value="Researcher">Researcher</option>
+              </select>
+            </div>
+
+          </div>
+
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </form>
+
+      </div>
+    </div>
+  </div>
+  <!-- Quiz Modal End-->
+
+
+  <footer id="footer" class="footer position-relative light-background" loading="lazy">
+
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-5 col-md-12 footer-about">
+          <a href="index.html" class="logo d-flex align-items-center">
+            <span class="sitename">ICCR</span>
+          </a>
+          <p>Official website of Indian Council for Cultural Relations, Ministry of External Affairs, Government of
+            India.
+            Note: Content on this website is published and managed by Indian Council for Cultural Relations.</p>
+          <div class="social-links d-flex mt-4">
+            <a href="https://x.com/iccr_hq"><i class="bi bi-twitter-x"></i></a>
+            <a href="https://www.facebook.com/ICCROfficial/"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.instagram.com/iccr_delhi/"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.youtube.com/@ICCRHQ"><i class="bi bi-youtube"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-6 footer-links">
+          <h4>Useful Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">About us</a></li>
+            <li><a href="#">Services</a></li>
+            <!-- <li><a href="#">Terms of service</a></li>
+            <li><a href="#">Privacy policy</a></li> -->
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-6 footer-links">
+          <h4>Our Services</h4>
+          <ul>
+            <li><a href="#">Culture</a></li>
+            <li><a href="#">Conferences & Exhibitions</a></li>
+            <li><a href="#">Scholarships</a></li>
+            <li><a href="#">Announcements</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+          <h4>Contact Us</h4>
+          <p>ICCR ( Indian Council for Cultural Relations)</p>
+          <p>Azad Bhawan Rd, IP Estate, New Delhi</p>
+          <p>Delhi 110002</p>
+          <p class="mt-4"><strong>Phone:</strong> <span>+91-11-23379309 </span></p>
+          <p><strong>Email:</strong> <span>grievance@iccr.gov.in</span></p>
+          <p><strong>Office Timing:</strong> <span>Monday - Friday : 9.00AM - 05.00PM</span></p>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="copyright text-center mt-4">
+      <p>© <span>Copyright</span> <strong class="sitename">ICCR</strong> <span>All Rights
+          Reserved</span>
+      </p>
+      <div class="credits">
+
+        Designed by <a href="https://ardhas.com/">Ardhas Technology</a>
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/js/owl.carousel.min.js"></script>
+
+  <script src="assets/js/jquery.countdown.js"></script>
+  <script src="assets/vendor/leaflet/leaflet.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/chatbot.js"></script>
+
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCu6-dpMW0aHhXly8CWHfEach8C0HK6QN0"></script>
+
+
+
+
+  <script>
+    const css = document.createElement('link');
+    css.rel = 'stylesheet';
+    css.href = 'assets/css/main.css?t=' + new Date().getTime(); // or use Math.random()
+    document.head.appendChild(css);
+  </script>
+  
+
+  <script>
+
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        const image = document.getElementById('slideImage');
+        image.classList.remove('hidden');
+        // Allow a slight delay so the browser registers the element before animating
+        requestAnimationFrame(() => {
+          image.classList.add('show');
+        });
+      }, 2000); // 5 seconds
+    });
+
+
+    function changeVideo(videoSrc) {
+      const video = document.getElementById('hero-video');
+      const source = video.querySelector('source');
+
+      const element = document.getElementById("devamini-1");
+      if (element) {
+        element.style.display = "block";
+      }
+      // Pause and reset current video
+      video.pause();
+      //video.removeAttribute('loop'); // Optional: remove loop for alt videos
+      video.currentTime = 0;
+
+      // Update video source
+      source.src = videoSrc;
+      video.load();
+
+      // Play the new video
+      video.play();
+    }
+
+
+
+    var swiper = new Swiper(".swiper-newdesign", {
+      effect: "coverflow",
+      grabCursor: true,
+      centeredSlides: true,
+      coverflowEffect: {
+        rotate: 0,
+        stretch: 0,
+        depth: 100,
+        modifier: 3,
+        slideShadows: true
+      },
+      keyboard: {
+        enabled: true
+      },
+      mousewheel: {
+        thresholdDelta: 70
+      },
+      loop: true,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true
+      },
+      breakpoints: {
+        640: {
+          slidesPerView: 2
+        },
+        768: {
+          slidesPerView: 2
+        },
+        1024: {
+          slidesPerView: 2
+        },
+        1442: {
+          slidesPerView: 4
+        },
+
+        1560: {
+          slidesPerView: 3
+        }
+      }
+    });
+
+    /**
+ * Init swiper sliders
+ */
+    function initSwiper() {
+      document.querySelectorAll(".init-swiper").forEach(function (swiperElement) {
+        let config = JSON.parse(
+          swiperElement.querySelector(".swiper-config").innerHTML.trim()
+        );
+
+        if (swiperElement.classList.contains("swiper-tab")) {
+          initSwiperWithCustomPagination(swiperElement, config);
+        } else {
+          new Swiper(swiperElement, config);
+        }
+      });
+    }
+
+    window.addEventListener("load", initSwiper);
+
+
+
+  </script>
+
+  <script>
+    // upcomming-event-carousel - main-slider - start
+    // --------------------------------------------------
+    $('#upcomming-event-carousel').owlCarousel({
+      items: 2,
+      loop: true,
+      margin: 30,
+      nav: true,
+      dots: false,
+      center: true,
+      autoplay: true,
+      smartSpeed: 1000,
+      autoplayTimeout: 5000,
+      autoplayHoverPause: true,
+      responsive: {
+        0: {
+          items: 1,
+          nav: false,
+          dots: true,
+        },
+        360: {
+          items: 1,
+          nav: false,
+          dots: true,
+        },
+        768: {
+          items: 1,
+        },
+        991: {
+          items: 1,
+        },
+        1199: {
+          items: 2,
+        }
+      }
+    });
+    // upcomming-event-carousel - main-slider - end
+    // --------------------------------------------------
+
+
+    // multy count down - start
+    // --------------------------------------------------
+    $('.countdown-list').each(function () {
+      $('[data-countdown]').each(function () {
+        var $this = $(this), finalDate = $(this).data('countdown');
+        $this.countdown(finalDate, function (event) {
+          var $this = $(this).html(event.strftime(''
+            + '<li class="timer-item days"><strong>%D</strong><small>days</small></li>'
+            + '<li class="timer-item hours"><strong>%H</strong><small>hours</small></li>'
+            + '<li class="timer-item mins"><strong>%M</strong><small>mins</small></li>'
+            + '<li class="timer-item seco"><strong>%S</strong><small>seco</small></li>'));
+        });
+      });
+
+    });
+    // multy count down - end
+    // --------------------------------------------------
+
+
+
+    const indiaLocations = [
+      {
+        name: "Mumbai Office",
+        lat: 19.0760,
+        lng: 72.8777,
+        address: "123 Marine Drive, Mumbai",
+      },
+      {
+        name: "Delhi Office",
+        lat: 28.6139,
+        lng: 77.2090,
+        address: "456 Connaught Place, Delhi",
+      }
+    ];
+
+    const worldLocations = [
+      {
+        name: "New York Office",
+        lat: 40.7128,
+        lng: -74.0060,
+        address: "789 Wall Street, NY",
+      },
+      {
+        name: "New York Office",
+        lat: 40.6128,
+        lng: -74.0060,
+        address: "789 Wall Street, NY",
+      },
+      {
+        name: "London Office",
+        lat: 51.5074,
+        lng: -0.1278,
+        address: "101 Oxford Street, London",
+      }
+
+    ];
+
+    let map;
+    let currentTab = "india"; // Start with India
+
+    function initMap(locations) {
+      map = new google.maps.Map(document.getElementById("map"), {
+        zoom: 2,
+        center: { lat: locations[0].lat, lng: locations[0].lng },
+      });
+
+      const icon = {
+        url: "assets/img/favicon.png", // replace with your logo
+        scaledSize: new google.maps.Size(40, 40),
+      };
+
+      locations.forEach((location) => {
+        const marker = new google.maps.Marker({
+          position: { lat: location.lat, lng: location.lng },
+          map,
+          title: location.name,
+          icon,
+        });
+
+        const infoWindow = new google.maps.InfoWindow({
+          content: `<strong>${location.name}</strong><br>${location.address}`,
+        });
+
+        marker.addListener("click", () => {
+          infoWindow.open(map, marker);
+        });
+      });
+    }
+
+    // function switchTab(tabName) {
+    //   document.getElementById("btn-india").classList.remove("active");
+    //   document.getElementById("btn-world").classList.remove("active");
+
+    //   if (tabName === "india") {
+    //     document.getElementById("btn-india").classList.add("active");
+    //     initMap(indiaLocations);
+    //   } else {
+    //     document.getElementById("btn-world").classList.add("active");
+    //     initMap(worldLocations);
+    //   }
+    // }
+
+    // function autoSwitchTabs() {
+    //   setInterval(() => {
+    //     currentTab = currentTab === "india" ? "world" : "india";
+    //     switchTab(currentTab);
+    //   }, 3000); // Switch every 3 seconds
+    // }
+
+    // window.onload = () => {
+    //   switchTab(currentTab); // Start with India
+    //   autoSwitchTabs();
+    // };
+
+    var slideIndex = 1;
+    //showDivs(slideIndex);
+
+    function plusDivs(n) {
+      //showDivs(slideIndex += n);
+    }
+
+    function showDivs(n) {
+      var i;
+      var x = document.getElementsByClassName("mySlides");
+      if (n > x.length) { slideIndex = 1 }
+      if (n < 1) { slideIndex = x.length }
+      for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+      }
+      x[slideIndex - 1].style.display = "block";
+    }
+
+    let currentSlide = 0;
+    const images = document.querySelectorAll('.carousel-img');
+    const totalSlides = images.length;
+
+    function showSlide(index) {
+      images.forEach((img, i) => {
+        img.classList.remove('active');
+        if (i === index) {
+          img.classList.add('active');
+        }
+      });
+    }
+
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % totalSlides;
+      showSlide(currentSlide);
+    }
+
+    // Change image every 3 seconds
+    setInterval(nextSlide, 3000);
+
+    $(document).ready(function () {
+      $("#imag1, #imag2").hide();
+      $("#imag1").show();
+
+      function flashImages() {
+        $("#imag1").fadeOut(1000, function () {
+          $("#imag2").fadeIn(1000).delay(1000).fadeOut(1000, function () {
+            $("#imag1").fadeIn(1000).delay(1000).fadeOut(1000, flashImages);
+          });
+        });
+      }
+      setTimeout(flashImages, 3000);
+    });
+
+    // Show popup on load
+    // window.onload = function () {
+    //   document.getElementById("popup").style.display = "flex";
+    // };
+
+    // Close popup function
+    // function closePopup() {
+    //   document.getElementById("popup").style.display = "none";
+    // }
+
+    window.addEventListener('load', function () {
+      $('#staticBackdrop').modal('show');
+    });
+
+
+
+    var eventcarousel = function () {
+      $('.featured-carousel').owlCarousel({
+        loop: true,
+        autoplay: true,
+        margin: 30,
+        animateOut: 'fadeOut',
+        animateIn: 'fadeIn',
+        nav: true,
+        dots: true,
+        autoplayHoverPause: false,
+        items: 1,
+        navText: ["<span class='ion-ios-arrow-back'></span>", "<span class='ion-ios-arrow-forward'></span>"],
+        responsive: {
+          0: {
+            items: 1
+          },
+          600: {
+            items: 2
+          },
+          1000: {
+            items: 3
+          }
+        }
+      });
+
+    };
+    eventcarousel();
+
+
+
+    window.addEventListener('load', function () {
+      const socialButtons = document.querySelector('.social-buttons');
+
+      setTimeout(() => {
+        socialButtons.classList.add('show');
+
+        setTimeout(() => {
+          socialButtons.classList.remove('show');
+          socialButtons.classList.add('hide');
+        }, 10000); // 10 seconds visible
+      }, 3000); // Wait 3 seconds before showing
+    });
+
+    const checkbox = document.getElementById("checkbox")
+    checkbox.addEventListener("change", () => {
+      document.body.classList.toggle("dark")
+    })
+
+
+
+    let currentFontSize = 16; // default size in pixels
+
+    $('#increase').click(function () {
+      currentFontSize += 2;
+      $('section').css('font-size', currentFontSize + 'px');
+    });
+
+    $('#decrease').click(function () {
+      if (currentFontSize > 10) {
+        currentFontSize -= 2;
+        $('section').css('font-size', currentFontSize + 'px');
+      }
+    });
+
+    $('#reset').click(function () {
+      currentFontSize = 16;
+      $('section').css('font-size', currentFontSize + 'px');
+    });
+
+
+  </script>
+
+</body>
+
+</html>
