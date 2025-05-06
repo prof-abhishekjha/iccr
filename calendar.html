@@ -14,7 +14,6 @@
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com" rel="preconnect">
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link
           href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
           rel="stylesheet">
@@ -29,7 +28,10 @@
         <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
       
-      
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/evo-calendar@1.1.3/evo-calendar/css/evo-calendar.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/evo-calendar@1.1.3/evo-calendar/css/evo-calendar.midnight-blue.min.css">
+        <link rel="stylesheet" href="styles.css">
       
         <link rel="stylesheet" type="text/css" href="assets/css/animate.css">
         <link rel="stylesheet" type="text/css" href="assets/css/owl.carousel.min.css">
@@ -39,395 +41,315 @@
         <!-- Main CSS File -->
         <link href="assets/css/main.css" rel="stylesheet">
         <link href="assets/css/chatbot.css" rel="stylesheet">
-        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
         <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
+
+<style>
+    a {
+        text-decoration: none !important;
+    }
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.hero1{
+    width:100%;
+    height:100%;
+    background:linear-gradient(45deg,#83B8D7,#BAA6FD);
+display:grid;
+
+}
+#calendar{
+    width:90%;
+    margin:40px auto;
+}
+
+.page-event {
+    background-color: #ffffff;
+    /* // padding-top: 50px; */
+    padding-bottom: 40px;
+    font-family: "Varela Round", sans-serif;
+    
+    .cover {
+    background-color: rgb(54, 53, 58);
+    height: 360px;
+    background-image: url('https://goo.gl/NA3iQP');
+    background-position: center center;
+    background-size: cover;
+    
+    .heading {
+        font-family: 'Telefon Black';
+        font-size: 243px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        text-align: center;
+        /* // padding-top: 20vh; */
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        color: #ccc;
+        transition: font-size 0.3s;
+    }
+    
+    .heading::first-letter {
+        color: #db2d8e;
+    }
+    }
+    
+    .upcoming-sec {
+    padding: 5vh 0;
+    border-bottom: 1px solid #ccc;
+    
+    .heading {
+        font-size: 30px;
+        color: #fff;
+    }
+    }
+    
+    .upcoming-event-list {
+    color: #5d5d5d;
+    
+    .event-block {
+        padding: 5vh 0;
+        border-bottom: 1px solid #ccc;
+        
+        .sec-1,
+        .sec-2 {
+        padding-bottom: 3vh;
+        }
+        
+        .sec-1 {
+        table {
+            .month {
+            text-transform: uppercase;
+            color: #db2d8e;
+            font-size: 30px;            
+            }
+            .month-date-devider {
+            width: 5vh;
+            margin: 1vh 0;
+            background-color: #3cbfaf;
+            height: 5px;
+            }
+            .date {
+            font-size: 60px;
+            font-weight: bolder;
+            line-height: normal;
+            }
+            .title {
+            padding-left: 20px;
+            vertical-align: top;
+            font-size: 30px;
+            }
+        }
+        }
+        
+        .sec-2 {
+        img {
+            width: 100%;
+        }
+        }
+        
+        .sec-3 {
+        .title {
+            font-size: 30px;
+            padding-bottom: 2vh;
+            color: #000000;
+        }
+        .venue {
+            table {
+            td {
+                vertical-align: top;
+                
+                i {
+                color: #db2d8e;
+                padding-left: 3px;
+                padding-right: 10px;
+                }
+                
+                .dim-color {
+                a {
+                    color: #5cb3fd;
+                    font-size: 15px;
+                }
+                }
+            }
+            }
+        }
+        .time {
+  padding-bottom: 3vh;
+}
+
+.time table td {
+  vertical-align: top;
+}
+
+.time table td i {
+  color: #db2d8e;
+  padding-right: 10px;
+}
+
+.time table td .dim-color {
+  color: #5cb3fd;
+  font-size: 15px;
+}
+
+        .sort-story {
+            /* padding-bottom: 3vh; */
+            -webkit-box-orient: vertical;
+            display: -webkit-box;
+            /* -webkit-line-clamp: 3; */
+            overflow: hidden;
+        }
+        .group-of-btn {
+            padding-top: 3vh;
+            
+            .book-ticket {
+            background-color: #3cbfaf;
+            color: #fff;
+            margin-bottom: 10px;
+            }
+        }
+        }
+    }
+    }
+
+    .page-heading {
+    text-transform: uppercase;
+    color: #fff;
+    padding-bottom: 17px;
+    word-break: break-all;
+    padding: 10px;
+    }
+
+    .page-heading::first-letter {
+    color: #db2d8e;
+    }
+}
+
+@media (min-width: 992px) {
+    .upcoming-event-list {
+    .event-block {
+        .sec-1 {
+        table {
+            .title {
+            display: none;
+            }
+        }
+        }
+    }
+    }
+
+}
+
+@media (max-width: 991px) {
+    .page-event {
+    .cover {
+        .heading {
+        font-size: 180px;
+        padding-top: 7vh;
+        }
+    }
+    }
+    .upcoming-event-list {
+    .event-block {
+        .sec-3 {
+        .title {
+            display: none;
+        }
+        }
+    }
+    }
+}
+
+@media (max-width: 767px) {
+    .page-event {
+    .cover {
+        .heading {
+        font-size: 140px;
+        padding-top: 11vh;
+        }
+    }
+    }
+}
+
+@media (max-width: 575px) {
+    .page-event {
+    .cover {
+        height: 214px;
+        
+        .heading {
+        font-size: 70px;
+        }
+    }
+    .upcoming-event-list {
+        .event-block {
+        .sec-1 {
+            table {
+            .month {
+                font-size: 14px;
+            }
+            .date {
+                font-size: 36px;
+            }
+            .title {
+                padding-left: 20px;
+                font-size: 20px;
+                vertical-align: top;
+            }
+            }
+        }
+        }
+    }
+    }
+}
+</style>
       </head>
-
-      <style>
-
-        .body {
-          margin: 0;
-          font-family: 'Inter', sans-serif;
-          background-color: var(--bg-dark);
-          color: var(--text-light);
-          --bg-dark: #0f2b18;
-          --accent: #ccb86b;
-          --text-light: #ffffff;
-          --card-bg: #3a2a1b;
-          --card-shadow: rgba(0, 0, 0, 0.3);
-          z-index: 1;
-        }
-    
-        .headers {
-          text-align: center;
-          padding: 2rem 1rem;
-          background-color: var(--bg-dark);
-        }
-    
-        .headers h1 {
-          font-family: 'Playfair Display', serif;
-          font-size: 3rem;
-          color: var(--accent);
-        }
-    
-        .headers p {
-          font-size: 1.2rem;
-          opacity: 0.8;
-          color: white;
-        }
-    
-        .calendar {
-          display: grid;
-          grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-          gap: 1.5rem;
-          padding: 2rem;
-          max-width: 1200px;
-          margin: auto;
-          background: transparent;
-        }
-    
-        .event {
-          background-color: var(--card-bg);
-          border-radius: 8px;
-          box-shadow: 0 6px 12px var(--card-shadow);
-          overflow: hidden;
-          transition: transform 0.3s ease;
-        }
-    
-        .event:hover {
-          transform: translateY(-5px);
-        }
-    
-        .event img {
-          width: 100%;
-          height: 180px;
-          object-fit: cover;
-        }
-    
-        .event-content {
-          padding: 1rem;
-        }
-    
-        .event-date {
-          font-weight: bold;
-          color: var(--accent);
-          font-size: 1.1rem;
-        }
-    
-        .event-title {
-          font-size: 1.3rem;
-          margin: 0.4rem 0;
-          font-weight: 600;
-          color: white;
-        }
-    
-        .event-desc {
-          font-size: 0.95rem;
-          opacity: 0.9;
-          color: white;
-        }
-      </style>
-      
 <body>
-    <header id="header" class="header d-flex align-items-center light-background sticky-top">
-        <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
 
-            <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
-            <!-- Uncomment the line below if you also wish to use an image logo -->
-            <img class="logo-light" src="assets/img/logo.svg" alt="">
-            <img class="logo-dark" style="display: none;" src="assets/img/logo-dark.svg" alt="">
-            </a>
+    <div id="navbar1-placeholder"></div>
 
-            <nav id="navmenu" class="navmenu">
-            <ul>
-                <li><a href="index.html#hero" class="active">Home</a></li>
-                <li class="dropdown"><a href="#"><span>About us</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                <ul>
-                    <li><a href="#">History</a></li>
-                    <li><a href="#">President</a></li>
-                    <li><a href="#">Director General</a></li>
-                    <li><a href="#">Memorandum of Association</a></li>
-                    <li><a href="#">Former Presidents</a></li>
-                    <li><a href="#">Former Director Generals</a></li>
-                    <li><a href="#">Member of Governing Body</a></li>
-                    <li><a href="#">Registration Certificate</a></li>
-                    <li><a href="#">Indian Cultural Centers Abroad</a></li>
-                    <li><a href="#">Zonal and sub-zonal centers</a></li>
-                    <li><a href="#">Staff Strength</a></li>
-                    <li class="dropdown"><a href="#"><span>Acts &amp; Rules</span> 
-                    <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                    <ul>
-                        <li><a href="#">ICCR Recruitment Rules
-                        </a></li>
-                        <li><a href="#">Constitution</a></li>
-                    </ul>
-                    </li>
-                    <li><a href="#">Who’s Who</a></li>
-                </ul>
-                </li>
-                <li class="dropdown"><a href="#"><span>Culture</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                <ul>
-                    <li><a href="#">Incoming Cultural Delegations</a></li>
-                    <li><a href="#">Outgoing Cultural Delegations</a></li>
-                    <li><a href="#">Events Calender</a></li>
-                </ul>
-                </li>
-                <li class="dropdown"><a href="#"><span>Artist</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                <ul>
-                    <li><a href="#">Introduction</a></li>
-                    <li class="dropdown"><a href="#"><span>Empanelment of Artists/Groups</span> <i
-                        class="bi bi-chevron-down toggle-dropdown"></i></a>
-                    <ul>
-                        <li><a href="#">Introduction
-                        </a></li>
-                        <li><a href="#">Student Category</a></li>
-                    </ul>
-                    </li>
-                </ul>
-                </li>
-                <li class="dropdown"><a href="#"><span>Conferences &amp; Exhibitions</span> <i
-                    class="bi bi-chevron-down toggle-dropdown"></i></a>
-                <ul>
-                    <li class="dropdown"><a href="#"><span>Conferences &amp; Seminars</span> <i
-                        class="bi bi-chevron-down toggle-dropdown"></i></a>
-                    <ul>
-                        <li><a href="#">Introduction
-                        </a></li>
-                        <li><a href="#">Online Form for Conferences &amp; Seminars</a></li>
-                    </ul>
+    <script>
+      fetch('navbar.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('navbar1-placeholder').innerHTML = data;
+    
+          // Wait a moment to ensure sub-header is present
+          setTimeout(() => {
+            const subHeader = document.querySelector('.sub-header');
+    
+            if (!subHeader) return;
+    
+            window.addEventListener('scroll', () => {
+              if (window.scrollY > 20) {
+                subHeader.classList.add('hide');
+              } else {
+                subHeader.classList.remove('hide');
+              }
+            });
+          }, 50);
+        });
+    </script>  
 
-                    </li>
-                    <li class="dropdown"><a href="#"><span>Visitors Programme</span> <i
-                        class="bi bi-chevron-down toggle-dropdown"></i></a>
-                    <ul>
-                        <li><a href="#">Foreign Visitors Programme
-                        </a></li>
-                        <li><a href="#">Distinguished Visitors Programme</a></li>
-                        <li><a href="#">Academic Visitors Programme</a></li>
-                        <li><a href="#">Gen-Next Democracy Network Programme</a></li>
-                        <li><a href="#">Orientation Programme for Students of Hindi</a></li>
-                    </ul>
-                    </li>
-                    <li><a href="#">Awards</a></li>
-                    <li class="dropdown"><a href="#"><span>Annapurna Certificate</span> <i
-                        class="bi bi-chevron-down toggle-dropdown"></i></a>
-                    <ul>
-                        <li><a href="#">About Annapurna Certificate
-                        </a></li>
-                        <li><a href="#">Terms &amp; Conditions</a></li>
-                        <li><a href="#">Winners</a></li>
-                        <li><a href="#">Application Form</a></li>
-                    </ul>
-                    </li>
-                    <li><a href="#">Pratibha Sangam Competition</a></li>
-
-                </ul>
-                </li>
-                <li class="dropdown"><a href="#"><span>Scholarships</span> <i
-                    class="bi bi-chevron-down toggle-dropdown"></i></a>
-                <ul>
-                    <li class="dropdown"><a href="#"><span>ICCR Scholarships</span> <i
-                        class="bi bi-chevron-down toggle-dropdown"></i></a>
-                    <ul>
-                        <li><a href="#">About
-                        </a></li>
-                        <li><a href="#">ICCR Scholarship Schemes</a></li>
-                        <li><a href="#">Guidelines</a></li>
-                        <li><a href="#">Apply Online</a></li>
-                    </ul>
-
-                    </li>
-                    <li class="dropdown"><a href="#"><span>Fellowship Programme</span> <i
-                        class="bi bi-chevron-down toggle-dropdown"></i></a>
-                    <ul>
-                        <li><a href="#">Introduction
-                        </a></li>
-                        <li><a href="#">Guidelines</a></li>
-                        <li><a href="#">Fellowship Application Form</a></li>
-
-                    </ul>
-                    </li>
-                    <li><a href="#">Scholarship FAQs</a></li>
-
-                </ul>
-                </li>
-                <li class="dropdown"><a href="#"><span>Announcements</span> <i
-                    class="bi bi-chevron-down toggle-dropdown"></i></a>
-                <ul>
-                    <li class="dropdown"><a href="#"><span>What's New</span> <i
-                        class="bi bi-chevron-down toggle-dropdown"></i></a>
-                    <ul>
-                        <li><a href="#">Current Events
-                        </a></li>
-                        <li><a href="#">Circulars</a></li>
-                        <li><a href="#">Notice</a></li>
-
-                    </ul>
-
-                    </li>
-                    <li><a href="#">Tenders</a></li>
-                    <li><a href="#">RTI</a></li>
-                    <li><a href="#">Vacancy</a></li>
-
-                </ul>
-                </li>
-                <li><a href="#">Unified Information</a></li>
-                <li class="dropdown"><a href="#"><span>Contact</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                <ul>
-
-                    <li><a href="#">ICCR Organogram</a></li>
-                    <li><a href="#">Contact List</a></li>
-                    <li><a href="#">Locate Us</a></li>
-
-                </ul>
-                </li>
-
-            </ul>
-            <!-- <i class="mobile-nav-toggle  bi bi-list"></i> -->
-            </nav>
-            <form class="search-form ms-4">
-            <div class="input-wrapper" style="position: relative;">
-                <input type="text" placeholder="Search..." class="form-control">
-                <span style="position: absolute; top: 50%; right: 10px; transform: translateY(-50%); color: #999;"
-                onclick="window.location.href = '?q=' + encodeURIComponent(document.getElementById('searchInput').value);">
-                <i class="bi bi-search"></i>
-                </span>
-            </div>
-            </form>
-
-            <div class="header-social-links d-flex">
-            <nav id="navsettings" class="navsettings">
-                <ul>
-                <li class="nav-lang"> <a href=""></a>
-                    <select class="language-selector" onchange="alert('https://location.loc?lang=' + this.value)">
-                    <option value="tr">Hindi</option>
-                    <option value="en" selected="">English</option>
-                    </select>
-                </li>
-                <li>
-                    <div class="dark-light">
-                    <input type="checkbox" class="checkbox" id="checkbox">
-                    <label for="checkbox" class="checkbox-label">
-                        <i class="fas fa-moon"></i>
-                        <i class="fas fa-sun"></i>
-                        <span class="ball"></span>
-                    </label>
-                    </div>
-                </li>
-                <li>
-                    <div class="web-font-size-controls">
-                    <button id="decrease">A-</button>
-                    <button id="reset">A</button>
-                    <button id="increase">A+</button>
-                    </div>
-                </li>
-                </ul>
-                <!-- <i class="mobile-settings-toggle  bi bi-gear" id="settingsToggle"></i> -->
-            </nav>
-
-            </div>
-
-            <div class="d-flex align-items-center mobilenavicon gap-2">
-            <i class="mobile-nav-toggle  bi bi-list" id="menuToggle"></i>
-            <i class="mobile-settings-toggle  bi bi-gear" id="settingsToggle"></i>
-            </div>
-
+    <section class="cal-part">
+        <div class="hero1">
+          <div id="calendar"></div>
         </div>
-
-    </header>
-
-    <div class="body">
-        <header class="headers">
-          <h1>Mark Your Calendar on - April '5</h1>
-          <p>Indian Council for Cultural Relations (ICCR)</p>
-        </header>
-        <section class="calendar">
+      </section>
       
-          <div class="event">
-              <img src="https://media.istockphoto.com/id/1284018973/vector/indian-traditional-music-2d-vector-web-banner-poster.jpg?s=612x612&w=0&k=20&c=gViaJdRIb6cjc-NVG2JsAM55qVw4zvgbcm7LV50kxZM=" alt="Event 1">
-              <div class="event-content">
-                <div class="event-date">5 April, Friday</div>
-                <div class="event-title">Classical Music Recital</div>
-                <div class="event-desc">A serene evening of Hindustani classical music featuring renowned artists.</div>
-              </div>
-            </div>
-            <div class="event">
-              <img src="https://iccr.gov.in/sites/default/files/sites/default/files/2024-01/gallery13.jpg" alt="Event 2">
-              <div class="event-content">
-                <div class="event-date">6 April, Saturday</div>
-                <div class="event-title">Kathak Dance Showcase</div>
-                <div class="event-desc">Celebrate the graceful art of Kathak by emerging performers from across India.</div>
-              </div>
-            </div>
-            <div class="event">
-              <img src="https://d7hftxdivxxvm.cloudfront.net/?quality=80&resize_to=width&src=https%3A%2F%2Fartsy-media-uploads.s3.amazonaws.com%2FONpUDR4nDp2ERWCsu4XscA%252FP5A6056-scaled.jpg&width=910" alt="Event 3">
-              <div class="event-content">
-                <div class="event-date">8 April, Monday</div>
-                <div class="event-title">Art Exhibition: India in Colours</div>
-                <div class="event-desc">A curated display of contemporary Indian art and cultural themes.</div>
-              </div>
-            </div>
-            <div class="event">
-              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKaQODgqRj09ilpEpXa5fg6fSggHqvrdJxBA&s" alt="Event 4">
-              <div class="event-content">
-                <div class="event-date">10 April, Wednesday</div>
-                <div class="event-title">Flute Symphony</div>
-                <div class="event-desc">An instrumental journey with leading flautists evoking the spirit of tradition.</div>
-              </div>
-            </div>
-            <div class="event">
-              <img src="https://iccr.gov.in/sites/default/files/sites/default/files/2024-01/gallery_3.jpg" alt="Event 5">
-              <div class="event-content">
-                <div class="event-date">12 April, Friday</div>
-                <div class="event-title">Dance Drama: Ramayana Reimagined</div>
-                <div class="event-desc">Witness epic storytelling through Bharatanatyam and theatrical expressions.</div>
-              </div>
-            </div>
-            <div class="event">
-              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLv1rjlKsWbqvjCwnCEI4p6GZnNEN916dfyA&s" alt="Event 6">
-              <div class="event-content">
-                <div class="event-date">14 April, Sunday</div>
-                <div class="event-title">ICCR Film Week</div>
-                <div class="event-desc">Showcasing documentaries and short films funded by ICCR reflecting Indian culture, history, and arts diplomacy.</div>
-              </div>
-            </div>
-            <div class="event">
-              <img src="https://i3.wp.com/www.thetalentedindian.com/wp-content/uploads/2023/04/Fusion-Dance.jpeg" alt="Event 7">
-              <div class="event-content">
-                <div class="event-date">15 April, Monday</div>
-                <div class="event-title">Folk Fusion Night</div>
-                <div class="event-desc">Folk troupes from across India unite with guest artists from Southeast Asia for a high-energy cultural blend.</div>
-              </div>
-            </div>
-            <div class="event">
-              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2S2qzA7uDuNfs2NRK69oy9W3jFivJNm5Q_Q&s" alt="Event 8">
-              <div class="event-content">
-                <div class="event-date">20 April, Saturday</div>
-                <div class="event-title">Sitar Night with Pt. Abhay Narayan</div>
-                <div class="event-desc">A mesmerizing solo concert featuring classical ragas on sitar under the ICCR heritage series.</div>
-              </div>
-            </div>
-            <div class="event">
-              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1ftpZpS_6SOaE0VAmAvql82hjfAlQvZkMbw&s" alt="Event 9">
-              <div class="event-content">
-                <div class="event-date">24–30 April</div>
-                <div class="event-title">Kathak Ensemble: Tarana</div>
-                <div class="event-desc">A dynamic performance by ICCR’s sponsored Kathak troupe showcasing rhythmic storytelling and ghungroo beats.</div>
-              </div>
-            </div>
-            <div class="event">
-              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTXAgkJ0_s6senQpIl9MMy5GaZXcAnrGuIkg&s" alt="Event 10">
-              <div class="event-content">
-                <div class="event-date">30 April, Tuesday</div>
-                <div class="event-title">Bharatanatyam: Nayika's Journey</div>
-                <div class="event-desc">A solo thematic Bharatanatyam recital capturing emotions of a classical heroine through dance expressions.</div>
-              </div>
-            </div>
-      
-        </section>
-      </div>  
+      <section class="event-cal">
+        <div class="page-event">
+          <div class="container">
+           <div class="upcoming-event-list">
+             <div class="event-block">
+               <div class="row">
+                 <div class="col-lg-2 sec-1">
+               </div>
+             </div>
+           </div>
+         </div>
+       </div>   
+      </section>
 
     <footer id="footer" class="footer position-relative light-background" loading="lazy" style="padding-top: 50px;">
 
@@ -494,6 +416,123 @@
     </div>
 
     </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/livestamp/1.1.2/livestamp.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/evo-calendar@1.1.3/evo-calendar/js/evo-calendar.min.js"></script>
+   
+    <script>
+     $(document).ready(function () {
+       const events = [
+         {
+           id: 'mmnnn',
+           name: 'ICCR Music Festival',
+           date: 'May/1/2025',
+           type: 'holiday',
+           everyYear: true,
+           venue: 'ICCR Auditorium',
+           time: 'May 1, 2025 at 6:00 PM',
+           image: 'https://iccr.gov.in/sites/default/files/2024-05/3march4.jpg',
+           description: `
+                 <div style="display:flex;flex-direction:column;align-items:flex-start;font-size:14px">
+                   <strong>Event Preview</strong>
+                   <img src="https://iccr.gov.in/sites/default/files/2024-05/3march4.jpg"
+                       style="width:100%;max-width:120px;border-radius:8px;margin:6px 0" />
+                   <span>Ring in the new year with music, dance, and joy at ICCR!</span>
+                 </div>
+               `,
+           customText: 'Ring in the new year with music, dance, and joy at ICCR!',
+           link: 'https://www.google.com'
+           
+         },
+       ];
+   
+       $('#calendar').evoCalendar({
+         calendarEvents: events
+       });
+   
+       // Listen for date click
+       $('#calendar').on('selectDate', function(event, newDate) {
+         const selectedDate = moment(newDate).format('MMMM/D/YYYY');
+         const match = events.find(e => moment(e.date).format('MMMM/D/YYYY') === selectedDate);
+   
+         if (match) {
+           $('.event-block').html(`
+             <div class="row">
+               <div class="col-lg-2 sec-1">
+                 <table>
+                   <tr>
+                     <td>
+                       <div class="month">${moment(match.date).format('MMM')}</div>
+                       <div class="month-date-devider"></div>
+                       <div class="date">${moment(match.date).format('D')}</div>
+                     </td>
+                     <td class="title">${match.name}</td>
+                   </tr>
+                 </table>
+               </div>
+               <div class="col-lg-5 sec-2">
+                 <img src="${match.image}" />
+               </div>
+               <div class="col-lg-5 sec-3">
+                 <div class="title">${match.name}</div>
+                 <div class="venue">
+                   <table>
+                     <tr>
+                       <td><i style="color: pink;" class="fas fa-map-marker-alt"></i></td>
+                       <td>
+                         <div style="padding-left: 5px;">${match.venue}</div>
+                         <div class="dim-color"><a href="${match.link}" target="_blank">Get Directions</a></div>
+                       </td>
+                     </tr>
+                   </table>
+                 </div>
+                 <div class="time">
+                   <table>
+                     <tr>
+                       <td><i style="color: pink;" class="far fa-clock"></i></td>
+                       <td><div style="padding-left: 5px;">${match.time}</div></td>
+                     </tr>
+                   </table>
+                 </div>
+                 <div class="sort-story">${match.customText}</div>
+                 <div class="group-of-btn">
+                   <a href="${match.link}" target="_blank" class="btn book-ticket">Click to See More Details</a>
+                 </div>
+               </div>
+             </div>
+           `);
+         } else {
+           $('.event-block').html('<div class="text-center p-5">No event found for this date.</div>');
+         }
+       });
+     });
+   </script>
+   
     <script src="assets/js/main.js"></script>
+    <script>
+        function resizeText(size) {
+          const html = document.documentElement;
+          if (size === 'small') {
+            html.style.fontSize = '14px';
+          } else if (size === 'large') {
+            html.style.fontSize = '18px';
+          } else {
+            html.style.fontSize = '16px';
+          }
+        }
+      </script>
+      <script>
+        document.addEventListener('DOMContentLoaded', function () {
+          const toggle = document.getElementById('darkModeToggle');
+          if (toggle) {
+            toggle.addEventListener('change', function () {
+              document.body.classList.toggle('dark-mode', this.checked);
+            });
+          }
+        });
+      </script>
 </body>
 </html>

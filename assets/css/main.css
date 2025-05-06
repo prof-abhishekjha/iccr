@@ -410,6 +410,7 @@ section#UTIKS {
 .featured-posts .blog-post-content h2 a {
   color: var(--contrast-color);
   transition: 0.3s;
+  text-decoration: none;
 }
 
 .featured-posts .blog-post-content h2 a:hover {
@@ -503,7 +504,7 @@ h1 {
 
 .column {
   float: left;
-  width: 25%;
+  width: 25% !important;
 }
 
 .row:after {
@@ -971,7 +972,7 @@ section,
   /* background: color-mix(in srgb, #06060670, transparent 50%); */
   position: absolute;
   inset: 0;
-  z-index: 2;
+  z-index: 1;
 }
 
 .hero .container {
@@ -4821,7 +4822,7 @@ h2.event-title {
   position: fixed;
   top: 20%;
   right: 5px;
-  z-index: 1000;
+  z-index: 99;
   }
   .social ul {
   padding: 0;
@@ -5506,6 +5507,7 @@ a.heading.color {
   font-size: 18px;
     text-transform: uppercase;
     display: inline-block;
+    text-decoration: none;
     /* padding-left: 60px; */
 }
 
