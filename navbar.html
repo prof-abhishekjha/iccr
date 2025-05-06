@@ -55,44 +55,66 @@
 }
 
 /* Dark mode toggle styled like a switch */
-.dark-toggle {
+.dark-mode-toggle {
   position: relative;
-  display: inline-block;
-  width: 40px;
-  height: 20px;
+  width: 52px;
+  height: 26px;
 }
-.dark-toggle input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-.dark-toggle .slider {
-  position: absolute;
-  cursor: pointer;
+
+.toggle-switch {
+  display: block;
   background-color: #ccc;
-  border-radius: 34px;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  transition: 0.3s;
+  border-radius: 26px;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  cursor: pointer;
+  transition: background 0.3s;
 }
-.dark-toggle .slider::before {
-  content: "";
-  position: absolute;
-  height: 14px;
-  width: 14px;
-  left: 3px;
-  bottom: 3px;
-  background-color: white;
+
+.toggle-switch .switch-thumb {
+  background: white;
+  width: 24px;
+  height: 24px;
   border-radius: 50%;
-  transition: 0.3s;
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  transition: all 0.3s ease;
 }
-.dark-toggle input:checked + .slider {
-  background-color: #4caf50;
+
+.sun-icon {
+  color: #ffc107;
+  display: block;
 }
-.dark-toggle input:checked + .slider::before {
-  transform: translateX(20px);
+.moon-icon {
+  color: #000000;
+  display: none;
+}
+
+#darkModeToggle {
+  display: none;
+}
+
+/* When checked, slide right and swap icon */
+#darkModeToggle:checked + .toggle-switch {
+  background-color: #444;
+}
+
+#darkModeToggle:checked + .toggle-switch .switch-thumb {
+  transform: translateX(26px);
+}
+
+#darkModeToggle:checked + .toggle-switch .sun-icon {
+  display: none;
+}
+
+#darkModeToggle:checked + .toggle-switch .moon-icon {
+  display: block;
 }
 
 .dark-mode {
@@ -399,10 +421,15 @@ nav1 .dropdown ul ul {
       </select>
   
       <!-- Dark Mode Toggle -->
-      <label class="dark-toggle">
-        <input type="checkbox" id="darkModeToggle">
-        <span class="slider"></span>
-      </label>
+      <div class="dark-mode-toggle">
+        <input type="checkbox" id="darkModeToggle" />
+        <label for="darkModeToggle" class="toggle-switch">
+          <span class="switch-thumb">
+            <i class="bi bi-sun-fill sun-icon"></i>
+            <i class="bi bi-moon-fill moon-icon"></i>
+          </span>
+        </label>
+      </div>        
   
       <!-- Text Resizer -->
       <div class="text-resizer">
