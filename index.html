@@ -712,10 +712,13 @@
           if (!subHeader) return;
   
           window.addEventListener('scroll', () => {
+            const sub = document.querySelector('.sub-header');
+            if (!sub) return;
+            
             if (window.scrollY > 20) {
-              subHeader.classList.add('hide');
+              sub.classList.add('hide');
             } else {
-              subHeader.classList.remove('hide');
+              sub.classList.remove('hide');
             }
           });
         }, 50);
@@ -2755,7 +2758,24 @@
     });
   });
 </script>
+<script>
+  function toggleMobileNav1() {
+    const leftNav = document.getElementById('nav1-left');
+    const rightNav = document.getElementById('nav1-right');
 
+    leftNav.classList.toggle('show');
+    rightNav.classList.toggle('show');
+
+    // Force display override when .show is active
+    if (leftNav.classList.contains('show')) {
+      leftNav.style.display = 'flex';
+      rightNav.style.display = 'flex';
+    } else {
+      leftNav.style.display = 'none';
+      rightNav.style.display = 'none';
+    }
+  }
+</script>
 
 </body>
 

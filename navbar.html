@@ -10,23 +10,36 @@
     /* Reset & Base */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-size: 16px; line-height: 1.4; padding-top: 111px;}
+    @media (max-width: 991px) {
+  .nav1-left, .nav1-right {
+    flex-direction: column;
+    background: #fff;
+    padding: 0.5rem;
+    width: 100%;
+  }
+}
 
-    .sub-header {
-  width: 100%;
-  background: #f4f4f4;
+.sub-header {
+  /* let it size itself when visible */
+  height: auto;
+  overflow: hidden;
+  padding: 0.5rem 1rem;
+  
+  /* animate height, opacity and padding */
+  transition: 
+    height 0.4s ease,
+    opacity 0.4s ease,
+    padding 0.4s ease;
+  opacity: 1;
   border-top: 1px solid #ddd;
   box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.05);
-  padding: 0.5rem 1rem;
-  overflow: hidden;
-  max-height: 50px; /* same as visible height */
-  opacity: 1;
-  transition: max-height 0.4s ease, opacity 0.4s ease;
-  z-index: 10;
 }
 
 .sub-header.hide {
-  max-height: 0;
+  /* collapse everything */
+  height: 0 !important;
   opacity: 0;
+  padding: 0 !important;
 }
 
 .tools-container {
@@ -236,11 +249,17 @@
     @media (max-width: 991px) {
       .header-inner { flex-wrap: wrap; justify-content: center; }
       .nav1-left, .nav1-right { display: none; }
-      .nav1-left.show, .nav1-right.show { display: flex; flex-direction: column; background: #fff; padding: .5rem 0; }
+      .nav1-left.show, .nav1-right.show { display: flex; flex-direction: column; background: #fff; padding: 1.5rem 0; }
       .nav1-toggle { display: block; cursor: pointer; font-size: 1.5rem; color: #4b2e28; position: absolute; top: 1rem; left: 1rem; }
       .logo-center { order: 1; margin: 1rem 0; }
       .sub-header { display: none; }
     }
+    @media (max-width: 991px) {
+  .nav1-left.show,
+  .nav1-right.show {
+    display: flex !important;
+  }
+}
 
 nav1 .dropdown ul ul {
   left: 100%;
@@ -269,11 +288,13 @@ nav1 .dropdown ul ul {
 <header id="header">
   <div class="header-inner">
     <!-- Mobile toggle -->
-    <div class="nav1-toggle d-lg-none" onclick="toggleMobileNav1()"><i class="bi bi-list"></i></div>
+    <div class="nav1-toggle d-lg-none" onclick="toggleMobileNav1()">
+      <i class="bi bi-list"></i>
+    </div>    
 
     <!-- Left nav1 half (4 items) -->
 <!-- LEFT SIDE NAV1 -->
-<nav1 class="nav1-left d-none d-lg-flex" id="nav1-left">
+<div class="nav1-left d-none d-lg-flex" id="nav1-left">
     <a href="index.html#hero" class="active">Home</a>
   
     <div class="dropdown">
@@ -339,7 +360,7 @@ nav1 .dropdown ul ul {
         <li><a href="#">Pratibha Sangam Competition</a></li>
       </ul>
     </div>
-  </nav1>  
+  </div>  
 
     <!-- Center Logo -->
     <div class="logo-center">
@@ -347,7 +368,7 @@ nav1 .dropdown ul ul {
     </div>
 
     <!-- Right nav1 half (4 items) -->
-    <nav1 class="nav1-right d-none d-lg-flex" id="nav1-right">
+    <nav class="nav1-right d-none d-lg-flex" id="nav1-right">
     <div class="dropdown">
         <a href="#">Artist</a>
         <ul style="list-style: none; padding: 10px 0;">
@@ -406,7 +427,7 @@ nav1 .dropdown ul ul {
       <li><a href="#">Locate Us</a></li>
     </ul>
   </div>
-    </nav1>
+</div>
   </div>
 
   <div class="sub-header">
@@ -443,12 +464,7 @@ nav1 .dropdown ul ul {
   
 </header>
 
-<script>
-  function toggleMobileNav1() {
-    document.getElementById('nav1-left').classList.toggle('show');
-    document.getElementById('nav1-right').classList.toggle('show');
-  }
-</script>
+
 
 <script>
   document.getElementById('darkModeToggle').addEventListener('change', function () {
@@ -461,7 +477,13 @@ function resizeText(size) {
     size === 'large' ? '18px' :
     '16px';
 }
-
 </script>
+<script>
+  function toggleMobileNav1() {
+    document.getElementById('nav1-left').classList.toggle('show');
+    document.getElementById('nav1-right').classList.toggle('show');
+  }
+</script>
+
 </body>
 </html>
