@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <title>ICCR Calendar</title>
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+      
+        <!-- Favicons -->
+        <link href="assets/img/favicon.png" rel="icon">
+        <link href="assets/img/fav-icon.png" rel="fav-icon">
+      
+        <!-- Fonts -->
+        <link href="https://fonts.googleapis.com" rel="preconnect">
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link
+          href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+          rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Arizonia&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Arizonia&display=swap" rel="stylesheet">
+      
+        <!-- Vendor CSS Files -->
+        <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+        <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+        <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+        <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
+      
+      
+      
+        <link rel="stylesheet" type="text/css" href="assets/css/animate.css">
+        <link rel="stylesheet" type="text/css" href="assets/css/owl.carousel.min.css">
+        <link rel="stylesheet" type="text/css" href="assets/css/owl.theme.default.min.css">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+      
+        <!-- Main CSS File -->
+        <link href="assets/css/main.css" rel="stylesheet">
+        <link href="assets/css/chatbot.css" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
+      </head>
+
+      <style>
+
+        .body {
+          margin: 0;
+          font-family: 'Inter', sans-serif;
+          background-color: var(--bg-dark);
+          color: var(--text-light);
+          --bg-dark: #0f2b18;
+          --accent: #ccb86b;
+          --text-light: #ffffff;
+          --card-bg: #3a2a1b;
+          --card-shadow: rgba(0, 0, 0, 0.3);
+          z-index: 1;
+        }
+    
+        .headers {
+          text-align: center;
+          padding: 2rem 1rem;
+          background-color: var(--bg-dark);
+        }
+    
+        .headers h1 {
+          font-family: 'Playfair Display', serif;
+          font-size: 3rem;
+          color: var(--accent);
+        }
+    
+        .headers p {
+          font-size: 1.2rem;
+          opacity: 0.8;
+          color: white;
+        }
+    
+        .calendar {
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+          gap: 1.5rem;
+          padding: 2rem;
+          max-width: 1200px;
+          margin: auto;
+          background: transparent;
+        }
+    
+        .event {
+          background-color: var(--card-bg);
+          border-radius: 8px;
+          box-shadow: 0 6px 12px var(--card-shadow);
+          overflow: hidden;
+          transition: transform 0.3s ease;
+        }
+    
+        .event:hover {
+          transform: translateY(-5px);
+        }
+    
+        .event img {
+          width: 100%;
+          height: 180px;
+          object-fit: cover;
+        }
+    
+        .event-content {
+          padding: 1rem;
+        }
+    
+        .event-date {
+          font-weight: bold;
+          color: var(--accent);
+          font-size: 1.1rem;
+        }
+    
+        .event-title {
+          font-size: 1.3rem;
+          margin: 0.4rem 0;
+          font-weight: 600;
+          color: white;
+        }
+    
+        .event-desc {
+          font-size: 0.95rem;
+          opacity: 0.9;
+          color: white;
+        }
+      </style>
+      
+<body>
+    <header id="header" class="header d-flex align-items-center light-background sticky-top">
+        <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
+
+            <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
+            <!-- Uncomment the line below if you also wish to use an image logo -->
+            <img class="logo-light" src="assets/img/logo.svg" alt="">
+            <img class="logo-dark" style="display: none;" src="assets/img/logo-dark.svg" alt="">
+            </a>
+
+            <nav id="navmenu" class="navmenu">
+            <ul>
+                <li><a href="index.html#hero" class="active">Home</a></li>
+                <li class="dropdown"><a href="#"><span>About us</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                <ul>
+                    <li><a href="#">History</a></li>
+                    <li><a href="#">President</a></li>
+                    <li><a href="#">Director General</a></li>
+                    <li><a href="#">Memorandum of Association</a></li>
+                    <li><a href="#">Former Presidents</a></li>
+                    <li><a href="#">Former Director Generals</a></li>
+                    <li><a href="#">Member of Governing Body</a></li>
+                    <li><a href="#">Registration Certificate</a></li>
+                    <li><a href="#">Indian Cultural Centers Abroad</a></li>
+                    <li><a href="#">Zonal and sub-zonal centers</a></li>
+                    <li><a href="#">Staff Strength</a></li>
+                    <li class="dropdown"><a href="#"><span>Acts &amp; Rules</span> 
+                    <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                    <ul>
+                        <li><a href="#">ICCR Recruitment Rules
+                        </a></li>
+                        <li><a href="#">Constitution</a></li>
+                    </ul>
+                    </li>
+                    <li><a href="#">Who’s Who</a></li>
+                </ul>
+                </li>
+                <li class="dropdown"><a href="#"><span>Culture</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                <ul>
+                    <li><a href="#">Incoming Cultural Delegations</a></li>
+                    <li><a href="#">Outgoing Cultural Delegations</a></li>
+                    <li><a href="#">Events Calender</a></li>
+                </ul>
+                </li>
+                <li class="dropdown"><a href="#"><span>Artist</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                <ul>
+                    <li><a href="#">Introduction</a></li>
+                    <li class="dropdown"><a href="#"><span>Empanelment of Artists/Groups</span> <i
+                        class="bi bi-chevron-down toggle-dropdown"></i></a>
+                    <ul>
+                        <li><a href="#">Introduction
+                        </a></li>
+                        <li><a href="#">Student Category</a></li>
+                    </ul>
+                    </li>
+                </ul>
+                </li>
+                <li class="dropdown"><a href="#"><span>Conferences &amp; Exhibitions</span> <i
+                    class="bi bi-chevron-down toggle-dropdown"></i></a>
+                <ul>
+                    <li class="dropdown"><a href="#"><span>Conferences &amp; Seminars</span> <i
+                        class="bi bi-chevron-down toggle-dropdown"></i></a>
+                    <ul>
+                        <li><a href="#">Introduction
+                        </a></li>
+                        <li><a href="#">Online Form for Conferences &amp; Seminars</a></li>
+                    </ul>
+
+                    </li>
+                    <li class="dropdown"><a href="#"><span>Visitors Programme</span> <i
+                        class="bi bi-chevron-down toggle-dropdown"></i></a>
+                    <ul>
+                        <li><a href="#">Foreign Visitors Programme
+                        </a></li>
+                        <li><a href="#">Distinguished Visitors Programme</a></li>
+                        <li><a href="#">Academic Visitors Programme</a></li>
+                        <li><a href="#">Gen-Next Democracy Network Programme</a></li>
+                        <li><a href="#">Orientation Programme for Students of Hindi</a></li>
+                    </ul>
+                    </li>
+                    <li><a href="#">Awards</a></li>
+                    <li class="dropdown"><a href="#"><span>Annapurna Certificate</span> <i
+                        class="bi bi-chevron-down toggle-dropdown"></i></a>
+                    <ul>
+                        <li><a href="#">About Annapurna Certificate
+                        </a></li>
+                        <li><a href="#">Terms &amp; Conditions</a></li>
+                        <li><a href="#">Winners</a></li>
+                        <li><a href="#">Application Form</a></li>
+                    </ul>
+                    </li>
+                    <li><a href="#">Pratibha Sangam Competition</a></li>
+
+                </ul>
+                </li>
+                <li class="dropdown"><a href="#"><span>Scholarships</span> <i
+                    class="bi bi-chevron-down toggle-dropdown"></i></a>
+                <ul>
+                    <li class="dropdown"><a href="#"><span>ICCR Scholarships</span> <i
+                        class="bi bi-chevron-down toggle-dropdown"></i></a>
+                    <ul>
+                        <li><a href="#">About
+                        </a></li>
+                        <li><a href="#">ICCR Scholarship Schemes</a></li>
+                        <li><a href="#">Guidelines</a></li>
+                        <li><a href="#">Apply Online</a></li>
+                    </ul>
+
+                    </li>
+                    <li class="dropdown"><a href="#"><span>Fellowship Programme</span> <i
+                        class="bi bi-chevron-down toggle-dropdown"></i></a>
+                    <ul>
+                        <li><a href="#">Introduction
+                        </a></li>
+                        <li><a href="#">Guidelines</a></li>
+                        <li><a href="#">Fellowship Application Form</a></li>
+
+                    </ul>
+                    </li>
+                    <li><a href="#">Scholarship FAQs</a></li>
+
+                </ul>
+                </li>
+                <li class="dropdown"><a href="#"><span>Announcements</span> <i
+                    class="bi bi-chevron-down toggle-dropdown"></i></a>
+                <ul>
+                    <li class="dropdown"><a href="#"><span>What's New</span> <i
+                        class="bi bi-chevron-down toggle-dropdown"></i></a>
+                    <ul>
+                        <li><a href="#">Current Events
+                        </a></li>
+                        <li><a href="#">Circulars</a></li>
+                        <li><a href="#">Notice</a></li>
+
+                    </ul>
+
+                    </li>
+                    <li><a href="#">Tenders</a></li>
+                    <li><a href="#">RTI</a></li>
+                    <li><a href="#">Vacancy</a></li>
+
+                </ul>
+                </li>
+                <li><a href="#">Unified Information</a></li>
+                <li class="dropdown"><a href="#"><span>Contact</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                <ul>
+
+                    <li><a href="#">ICCR Organogram</a></li>
+                    <li><a href="#">Contact List</a></li>
+                    <li><a href="#">Locate Us</a></li>
+
+                </ul>
+                </li>
+
+            </ul>
+            <!-- <i class="mobile-nav-toggle  bi bi-list"></i> -->
+            </nav>
+            <form class="search-form ms-4">
+            <div class="input-wrapper" style="position: relative;">
+                <input type="text" placeholder="Search..." class="form-control">
+                <span style="position: absolute; top: 50%; right: 10px; transform: translateY(-50%); color: #999;"
+                onclick="window.location.href = '?q=' + encodeURIComponent(document.getElementById('searchInput').value);">
+                <i class="bi bi-search"></i>
+                </span>
+            </div>
+            </form>
+
+            <div class="header-social-links d-flex">
+            <nav id="navsettings" class="navsettings">
+                <ul>
+                <li class="nav-lang"> <a href=""></a>
+                    <select class="language-selector" onchange="alert('https://location.loc?lang=' + this.value)">
+                    <option value="tr">Hindi</option>
+                    <option value="en" selected="">English</option>
+                    </select>
+                </li>
+                <li>
+                    <div class="dark-light">
+                    <input type="checkbox" class="checkbox" id="checkbox">
+                    <label for="checkbox" class="checkbox-label">
+                        <i class="fas fa-moon"></i>
+                        <i class="fas fa-sun"></i>
+                        <span class="ball"></span>
+                    </label>
+                    </div>
+                </li>
+                <li>
+                    <div class="web-font-size-controls">
+                    <button id="decrease">A-</button>
+                    <button id="reset">A</button>
+                    <button id="increase">A+</button>
+                    </div>
+                </li>
+                </ul>
+                <!-- <i class="mobile-settings-toggle  bi bi-gear" id="settingsToggle"></i> -->
+            </nav>
+
+            </div>
+
+            <div class="d-flex align-items-center mobilenavicon gap-2">
+            <i class="mobile-nav-toggle  bi bi-list" id="menuToggle"></i>
+            <i class="mobile-settings-toggle  bi bi-gear" id="settingsToggle"></i>
+            </div>
+
+        </div>
+
+    </header>
+
+    <div class="body">
+        <header class="headers">
+          <h1>Mark Your Calendar on - April '5</h1>
+          <p>Indian Council for Cultural Relations (ICCR)</p>
+        </header>
+        <section class="calendar">
+      
+          <div class="event">
+              <img src="https://media.istockphoto.com/id/1284018973/vector/indian-traditional-music-2d-vector-web-banner-poster.jpg?s=612x612&w=0&k=20&c=gViaJdRIb6cjc-NVG2JsAM55qVw4zvgbcm7LV50kxZM=" alt="Event 1">
+              <div class="event-content">
+                <div class="event-date">5 April, Friday</div>
+                <div class="event-title">Classical Music Recital</div>
+                <div class="event-desc">A serene evening of Hindustani classical music featuring renowned artists.</div>
+              </div>
+            </div>
+            <div class="event">
+              <img src="https://iccr.gov.in/sites/default/files/sites/default/files/2024-01/gallery13.jpg" alt="Event 2">
+              <div class="event-content">
+                <div class="event-date">6 April, Saturday</div>
+                <div class="event-title">Kathak Dance Showcase</div>
+                <div class="event-desc">Celebrate the graceful art of Kathak by emerging performers from across India.</div>
+              </div>
+            </div>
+            <div class="event">
+              <img src="https://d7hftxdivxxvm.cloudfront.net/?quality=80&resize_to=width&src=https%3A%2F%2Fartsy-media-uploads.s3.amazonaws.com%2FONpUDR4nDp2ERWCsu4XscA%252FP5A6056-scaled.jpg&width=910" alt="Event 3">
+              <div class="event-content">
+                <div class="event-date">8 April, Monday</div>
+                <div class="event-title">Art Exhibition: India in Colours</div>
+                <div class="event-desc">A curated display of contemporary Indian art and cultural themes.</div>
+              </div>
+            </div>
+            <div class="event">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKaQODgqRj09ilpEpXa5fg6fSggHqvrdJxBA&s" alt="Event 4">
+              <div class="event-content">
+                <div class="event-date">10 April, Wednesday</div>
+                <div class="event-title">Flute Symphony</div>
+                <div class="event-desc">An instrumental journey with leading flautists evoking the spirit of tradition.</div>
+              </div>
+            </div>
+            <div class="event">
+              <img src="https://iccr.gov.in/sites/default/files/sites/default/files/2024-01/gallery_3.jpg" alt="Event 5">
+              <div class="event-content">
+                <div class="event-date">12 April, Friday</div>
+                <div class="event-title">Dance Drama: Ramayana Reimagined</div>
+                <div class="event-desc">Witness epic storytelling through Bharatanatyam and theatrical expressions.</div>
+              </div>
+            </div>
+            <div class="event">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLv1rjlKsWbqvjCwnCEI4p6GZnNEN916dfyA&s" alt="Event 6">
+              <div class="event-content">
+                <div class="event-date">14 April, Sunday</div>
+                <div class="event-title">ICCR Film Week</div>
+                <div class="event-desc">Showcasing documentaries and short films funded by ICCR reflecting Indian culture, history, and arts diplomacy.</div>
+              </div>
+            </div>
+            <div class="event">
+              <img src="https://i3.wp.com/www.thetalentedindian.com/wp-content/uploads/2023/04/Fusion-Dance.jpeg" alt="Event 7">
+              <div class="event-content">
+                <div class="event-date">15 April, Monday</div>
+                <div class="event-title">Folk Fusion Night</div>
+                <div class="event-desc">Folk troupes from across India unite with guest artists from Southeast Asia for a high-energy cultural blend.</div>
+              </div>
+            </div>
+            <div class="event">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2S2qzA7uDuNfs2NRK69oy9W3jFivJNm5Q_Q&s" alt="Event 8">
+              <div class="event-content">
+                <div class="event-date">20 April, Saturday</div>
+                <div class="event-title">Sitar Night with Pt. Abhay Narayan</div>
+                <div class="event-desc">A mesmerizing solo concert featuring classical ragas on sitar under the ICCR heritage series.</div>
+              </div>
+            </div>
+            <div class="event">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1ftpZpS_6SOaE0VAmAvql82hjfAlQvZkMbw&s" alt="Event 9">
+              <div class="event-content">
+                <div class="event-date">24–30 April</div>
+                <div class="event-title">Kathak Ensemble: Tarana</div>
+                <div class="event-desc">A dynamic performance by ICCR’s sponsored Kathak troupe showcasing rhythmic storytelling and ghungroo beats.</div>
+              </div>
+            </div>
+            <div class="event">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTXAgkJ0_s6senQpIl9MMy5GaZXcAnrGuIkg&s" alt="Event 10">
+              <div class="event-content">
+                <div class="event-date">30 April, Tuesday</div>
+                <div class="event-title">Bharatanatyam: Nayika's Journey</div>
+                <div class="event-desc">A solo thematic Bharatanatyam recital capturing emotions of a classical heroine through dance expressions.</div>
+              </div>
+            </div>
+      
+        </section>
+      </div>  
+
+    <footer id="footer" class="footer position-relative light-background" loading="lazy" style="padding-top: 50px;">
+
+    <div class="container footer-top">
+        <div class="row gy-4">
+        <div class="col-lg-5 col-md-12 footer-about">
+            <a href="index.html" class="logo d-flex align-items-center">
+            <span class="sitename">ICCR</span>
+            </a>
+            <p>Official website of Indian Council for Cultural Relations, Ministry of External Affairs, Government of
+            India.
+            Note: Content on this website is published and managed by Indian Council for Cultural Relations.</p>
+            <div class="social-links d-flex mt-4">
+            <a href="https://x.com/iccr_hq"><i class="bi bi-twitter-x"></i></a>
+            <a href="https://www.facebook.com/ICCROfficial/"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.instagram.com/iccr_delhi/"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.youtube.com/@ICCRHQ"><i class="bi bi-youtube"></i></a>
+            </div>
+        </div>
+
+        <div class="col-lg-2 col-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">About us</a></li>
+            <li><a href="#">Services</a></li>
+            <!-- <li><a href="#">Terms of service</a></li>
+            <li><a href="#">Privacy policy</a></li> -->
+            </ul>
+        </div>
+
+        <div class="col-lg-2 col-6 footer-links">
+            <h4>Our Services</h4>
+            <ul>
+            <li><a href="#">Culture</a></li>
+            <li><a href="#">Conferences & Exhibitions</a></li>
+            <li><a href="#">Scholarships</a></li>
+            <li><a href="#">Announcements</a></li>
+            <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+            <h4>Contact Us</h4>
+            <p>ICCR ( Indian Council for Cultural Relations)</p>
+            <p>Azad Bhawan Rd, IP Estate, New Delhi</p>
+            <p>Delhi 110002</p>
+            <p class="mt-4"><strong>Phone:</strong> <span>+91-11-23379309 </span></p>
+            <p><strong>Email:</strong> <span>grievance@iccr.gov.in</span></p>
+            <p><strong>Office Timing:</strong> <span>Monday - Friday : 9.00AM - 05.00PM</span></p>
+        </div>
+
+        </div>
+    </div>
+
+    <div class="copyright text-center mt-4">
+        <p>© <span>Copyright</span> <strong class="sitename">ICCR</strong> <span>All Rights
+            Reserved</span>
+        </p>
+        <div class="credits">
+
+        Designed by <a href="https://ardhas.com/">Ardhas Technology</a>
+        </div>
+    </div>
+
+    </footer>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

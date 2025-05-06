@@ -951,7 +951,11 @@ section,
   /* align-items: center;
   justify-content: center; */
 }
-
+@media (max-width: 767px) {
+  .hero {
+    min-height: 10vh;
+  }
+}
 .hero img {
   position: absolute;
   inset: 0;
