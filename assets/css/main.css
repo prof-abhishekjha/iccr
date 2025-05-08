@@ -5233,6 +5233,7 @@ Search Design end
 #hero {
   position: relative;
   overflow: hidden;
+  margin-top: 111px;
 }
 
 #hero-video {

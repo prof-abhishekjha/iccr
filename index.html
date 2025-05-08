@@ -42,9 +42,6 @@
   <link href="assets/css/chatbot.css" rel="stylesheet">
 
   <style>
-    body {
-      padding-top: 111px;
-    }
     .image-container {
       position: absolute;
       right: -100%;
@@ -542,11 +539,14 @@
     }
 
     /* —— Hero section & aspect ratio —— */
-    .shutter-section { position: relative; }
+    .shutter-section { 
+      position: relative; 
+    }
+
     .ratio-box {
       position: relative;
       width: 100%;
-      aspect-ratio: 1920 / 720;  /* adjust height here if you like */
+      aspect-ratio: 1963 / 720;  /* adjust height here if you like */
       overflow: hidden;
     }
     @supports not (aspect-ratio: 1) {
@@ -654,14 +654,6 @@
 
 <body class="index-page">
 
-  <!-- Popup Container -->
-  <!-- <div class="popup-overlay" id="popup">
-    <div class="popup-content">
-      <button class="close-btn" onclick="closePopup()">Close</button>
-      <img src="assets/img/pop-up.png" alt="Popup Image">
-    </div>
-  </div> -->
-
   <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
     aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
@@ -698,33 +690,7 @@
   </div>
 
   <div id="navbar1-placeholder"></div>
-
-  <script>
-    fetch('navbar.html')
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById('navbar1-placeholder').innerHTML = data;
   
-        // Wait a moment to ensure sub-header is present
-        setTimeout(() => {
-          const subHeader = document.querySelector('.sub-header');
-  
-          if (!subHeader) return;
-  
-          window.addEventListener('scroll', () => {
-            const sub = document.querySelector('.sub-header');
-            if (!sub) return;
-            
-            if (window.scrollY > 20) {
-              sub.classList.add('hide');
-            } else {
-              sub.classList.remove('hide');
-            }
-          });
-        }, 50);
-      });
-  </script>  
-
 
 <nav class="social" style="top: 20%;">
   <ul>
@@ -751,101 +717,6 @@
     </li>
   </ul>
 </nav>
-
-
-  <div class="videosection" style="display: none;">
-    <section class="slide-wrapper">
-      <div class="container">
-        <div id="myCarousel" class="carousel slide">
-          <!-- Indicators -->
-          <ol class="carousel-indicators">
-            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#myCarousel" data-slide-to="1"></li>
-            <li data-target="#myCarousel" data-slide-to="2"></li>
-          </ol>
-
-          <!-- Wrapper for slides -->
-          <div class="carousel-inner">
-            <div class="item item1 active">
-              <div class="fill" style=" background-color:#48c3af;">
-                <div class="inner-content">
-                  <div class="carousel-img">
-                    <img src="http://cdn.homedit.com/wp-content/uploads/2011/08/137CLUB2ST.png" alt="sofa"
-                      class="img img-responsive" />
-                  </div>
-                  <div class="carousel-desc">
-
-                    <h2>Modern Designer Sofa</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis elit ipsum, scelerisque non semper
-                      eu, aliquet vel odio. Sed auctor id purus nec tristique. Donec euismod, urna vel dapibus
-                      tristique,
-                      dolor arcu ultrices lectus, nec pulvinar est turpis sit amet felis. Duis interdum purus quam,
-                      vitae
-                      cursus erat ornare at. Donec congue mi a ipsum tincidunt, imperdiet vehicula odio rutrum. Nam
-                      porta
-                      vulputate magna, id pretium lectus iaculis eu. Ut ut viverra libero.</p>
-
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="item item2">
-              <div class="fill" style="background-color:#b33f4a;">
-                <div class="inner-content">
-                  <div class="carousel-img">
-                    <img src="http://cdn.homedit.com/wp-content/uploads/2011/08/137CLUB2ST.png" alt="white-sofa"
-                      class="img img-responsive" />
-                  </div>
-                  <div class="carousel-desc">
-
-                    <h2>Vintage Style Sofa</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis elit ipsum, scelerisque non semper
-                      eu, aliquet vel odio. Sed auctor id purus nec tristique. Donec euismod, urna vel dapibus
-                      tristique,
-                      dolor arcu ultrices lectus, nec pulvinar est turpis sit amet felis. Duis interdum purus quam,
-                      vitae
-                      cursus erat ornare at. Donec congue mi a ipsum tincidunt, imperdiet vehicula odio rutrum. Nam
-                      porta
-                      vulputate magna, id pretium lectus iaculis eu. Ut ut viverra libero.</p>
-
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="item item3">
-              <div class="fill" style="background-color:#7fc2f4;">
-                <div class="inner-content">
-                  <div class="col-md-6">
-
-                    <div class="carousel-img">
-                      <img src="http://cdn.homedit.com/wp-content/uploads/2011/08/137CLUB2ST.png" alt="sofa"
-                        class="img img-responsive" />
-                    </div>
-                  </div>
-
-                  <div class="col-md-6 text-left">
-                    <div class="carousel-desc">
-
-                      <h2>Stylish Sofa</h2>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis elit ipsum, scelerisque non
-                        semper
-                        eu, aliquet vel odio. Sed auctor id purus nec tristique. Donec euismod, urna vel dapibus
-                        tristique, dolor arcu ultrices lectus, nec pulvinar est turpis sit amet felis. Duis interdum
-                        purus
-                        quam, vitae cursus erat ornare at. Donec congue mi a ipsum tincidunt, imperdiet vehicula odio
-                        rutrum. Nam porta vulputate magna, id pretium lectus iaculis eu. Ut ut viverra libero.</p>
-
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </section>
-  </div>
 
 
   <!-- Hero Section -->

@@ -257,4 +257,22 @@
   document.addEventListener("scroll", navmenuScrollspy);
 })();
 
+// common.js
+document.addEventListener('DOMContentLoaded', () => {
+  // 1) load the navbar
+  fetch('navbar.html')
+    .then(r => r.text())
+    .then(html => {
+      document
+        .getElementById('navbar1-placeholder')
+        .insertAdjacentHTML('beforebegin', html);
+
+      // 2) attach the scroll-to-hide handler
+      const sub = document.querySelector('.sub-header');
+      if (!sub) return;
+      window.addEventListener('scroll', () => {
+        sub.classList.toggle('hide', window.scrollY > 20);
+      });
+    });
+});
 
