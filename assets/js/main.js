@@ -260,7 +260,7 @@
 // common.js
 document.addEventListener('DOMContentLoaded', () => {
   // 1) load the navbar
-  fetch('navbar.html')
+  fetch('./navbar.html')
     .then(r => r.text())
     .then(html => {
       document
